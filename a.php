@@ -6,8 +6,6 @@ require_once "config.php";
 
 if(isset($_GET['drug'])){
 
-
-
 $sql = "SELECT drugprice090822.drug, drugprice090822.price FROM drugprice090822 WHERE drugprice090822.drug = $drug";
 
 $result = mysqli_query($link, $sql);
