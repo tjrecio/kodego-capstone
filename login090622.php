@@ -12,7 +12,7 @@ if (isset($_SESSION["loggedin"])) {
 
 
 
-// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   $sql = "SELECT storeid, username, password FROM users090822 WHERE username = ?";
 
@@ -48,7 +48,7 @@ if (isset($_SESSION["loggedin"])) {
     }
   }
   mysqli_close($link);
-// }
+}
 
 
 ?>

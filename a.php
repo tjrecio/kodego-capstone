@@ -3,6 +3,9 @@
 session_start();
 require_once "config.php";
 
+$row['0'] = "";
+$row['1'] = "";
+
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +26,7 @@ require_once "config.php";
 <body>
   <div id="container">
 
-  
+    <?php include 'header.php' ?>
 
     <div id="main">
 
@@ -36,57 +39,59 @@ require_once "config.php";
         </div>
       </div>
 
-<?php
-//main mysqli
-if (isset($_POST['beginsearch'])) {
+      <?php
+      //main mysqli
+      if (isset($_POST['beginsearch'])) {
 
+if(!empty($_POST['drug'])){
   $drug = $_POST['drug'];
 
-  $query = "SELECT drugprice090822.drug, drugprice090822.price FROM drugprice090822 WHERE drugprice090822.drug = '$drug' ";
+  $query = "SELECT drugprice090822.drug, drugprice090822.price FROM drugprice090822 WHERE drugprice090822.drug = '$drug'";
   $query_run = mysqli_query($link, $query);
 
-  $row = mysqli_fetch_row($query_run)
-?>
+  $row = mysqli_fetch_row($query_run);
 
-<?php
-    // inserted from main mysqli
-  }
+} else {
+  $errormessage = "Nothing Selected.";
+  $row['0'] = "";
+  $row['1'] = "";
+}
+mysqli_close($link);
 
-  mysqli_free_result($query_run);
-  mysqli_close($link);
+      }
 
-// inserted from main mysqli
-?>
+      ?>
 
+      <div id="formlm">
 
+        <form id="" method="POST" action="a.php">
 
-      <form id="formlm" method="POST" action="a.php">
-
-
-
-        <div id="drugSearch">
-          <div>
-            <div style="font-size: 80%;"><i class="fa-solid fa-prescription-bottle-medical"></i>&nbspMedicine</div>
-            <div><input class="inputBoxDrug" type="text" name="drug" style="padding-left: 5px; width: 480px;" placeholder="type-in medicine by prescription..."></div>
+          <div id="drugSearch">
+            <div>
+              <div style="font-size: 80%;"><i class="fa-solid fa-prescription-bottle-medical"></i>&nbspMedicine</div>
+              <div><input class="inputBoxDrug" type="text" name="drug" style="padding-left: 5px; width: 480px;" placeholder="type-in medicine by prescription name..."></div>
+            </div>
+            <!-- search button -->
+            <button id="drugSearchBtn" type="submit" name="beginsearch"><i class="fa-solid fa-magnifying-glass"></i></button>
           </div>
-          <!-- search button -->
-          <button id="drugSearchBtn" type="submit" name="beginsearch"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
-        <br>
+          <div id="errorSpace">
+            <?php
+            if (isset($errormessage)) {
+              echo '<i class="fa-solid fa-circle-exclamation"></i>' . "&nbsp" . $errormessage;
+            }
+            ?>
+          </div>
+        </form>
         <div id="drugOutput">
           <div style="font-size: 80%;"><i class="fa-solid fa-prescription-bottle-medical"></i>&nbspMedicine</div>
-          <div><input class="inputBoxLm" type="text" name="drug1" style="padding-left: 5px;" value="<?php echo htmlspecialchars($row['0']) ?>"></div>
+          <div><input class="inputBoxLm" type="text" name="drug1" style="padding-left: 5px;" value="<?php echo htmlspecialchars($row['0']); ?>"></div>
         </div>
         <div id="priceOutput">
           <div style="font-size: 80%;"><i class="fa-solid fa-peso-sign"></i>&nbspPrice</div>
-          <div><input class="inputBoxLm" type="float" name="price" style="padding-left: 5px; padding-right: 5px; width: 145px; text-align: end;" value="<?php echo htmlspecialchars($row['1']);?>"></div>
+          <div><input class="inputBoxLm" type="float" name="price" style="padding-left: 5px; padding-right: 5px; width: 145px; text-align: end;" value="<?php echo htmlspecialchars($row['1']); ?>"></div>
         </div>
-
-        <div id="errorSpace">
-        </div>
-
-      </form>
-
+        <br>
+      </div>
     </div>
 
     <?php include 'footer.php' ?>
