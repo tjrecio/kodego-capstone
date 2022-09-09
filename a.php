@@ -1,22 +1,7 @@
 <?php
 
 session_start();
-
 require_once "config.php";
-
-if(isset($_GET['drug'])){
-
-$sql = "SELECT drugprice090822.drug, drugprice090822.price FROM drugprice090822 WHERE drugprice090822.drug = $drug";
-
-$result = mysqli_query($link, $sql);
-$drugprice = mysqli_fetch_assoc($result);
-
-mysqli_free_result($result);
-mysqli_close($link);
-
-var_dump($drugprice);
-
-}
 
 ?>
 
@@ -38,7 +23,7 @@ var_dump($drugprice);
 <body>
   <div id="container">
 
-    <?php include 'headerloggedin.php' ?>
+  <?php include 'header.php' ?>
 
     <div id="main">
 
@@ -51,38 +36,55 @@ var_dump($drugprice);
         </div>
       </div>
 
-      <form id="formlm" method="POST" action="locatemed090622.php">
+<?php
+//main mysqli
+if (isset($_POST['beginsearch'])) {
+
+  $drug = $_POST['drug'];
+
+  $query = "SELECT drugprice090822.drug, drugprice090822.price FROM drugprice090822 WHERE drugprice090822.drug = '$drug' ";
+  $query_run = mysqli_query($link, $query);
+
+  $row = mysqli_fetch_row($query_run)
+?>
+
+<?php
+    // inserted from main mysqli
+  }
+
+  mysqli_free_result($query_run);
+  mysqli_close($link);
+
+// inserted from main mysqli
+?>
+
+
+
+      <form id="formlm" method="POST" action="a.php">
+
+
 
         <div id="drugSearch">
           <div>
             <div style="font-size: 80%;"><i class="fa-solid fa-prescription-bottle-medical"></i>&nbspMedicine</div>
-            <div><input class="inputBoxDrug" type="text" name=""></div>
+            <div><input class="inputBoxDrug" type="text" name="drug" style="padding-left: 5px; width: 480px;" placeholder="type-in medicine by prescription..."></div>
           </div>
-          <button id="drugSearchBtn" type="submit" name="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <!-- search button -->
+          <button id="drugSearchBtn" type="submit" name="beginsearch"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
         <br>
         <div id="drugOutput">
-
-          <?php
-          foreach ($drugprice as $drugpriceresult);
-          ?>
-
           <div style="font-size: 80%;"><i class="fa-solid fa-prescription-bottle-medical"></i>&nbspMedicine</div>
-          <div><input class="inputBoxLm" type="text" name="drug" style="padding-left: 5px;" value="<?php echo htmlspecialchars($drugpriceresult['drug']) ?>"></div>
+          <div><input class="inputBoxLm" type="text" name="drug1" style="padding-left: 5px;" value="<?php echo htmlspecialchars($row['0']) ?>"></div>
         </div>
         <div id="priceOutput">
           <div style="font-size: 80%;"><i class="fa-solid fa-peso-sign"></i>&nbspPrice</div>
-          <div><input class="inputBoxLm" type="float" name="price" style="padding-left: 5px; padding-right: 5px; width: 145px; text-align: end;" value="<?php echo htmlspecialchars($drugpriceresult['price']) ?>"></div>
+          <div><input class="inputBoxLm" type="float" name="price" style="padding-left: 5px; padding-right: 5px; width: 145px; text-align: end;" value="<?php echo htmlspecialchars($row['1']);?>"></div>
         </div>
+
         <div id="errorSpace">
-
-          <?php
-          if (isset($errormessage)) {
-            echo '<i class="fa-solid fa-circle-exclamation"></i>' . "&nbsp" . $errormessage;
-          }
-          ?>
-
         </div>
+
       </form>
 
     </div>
@@ -91,4 +93,5 @@ var_dump($drugprice);
 
   </div>
 </body>
+
 </html>

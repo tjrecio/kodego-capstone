@@ -38,7 +38,7 @@ if ($result = mysqli_query($link, $sql)) {
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/6e0e3f1ae2.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="style090622.css">
+        <link rel="stylesheet" href="styles090622.css">
         <script src="script090422.js"></script>
         <title>Search Meds - 090622</title>
       </head>
