@@ -23,7 +23,7 @@ require_once "config.php";
 <body>
   <div id="container">
 
-  <?php include 'header.php' ?>
+  
 
     <div id="main">
 

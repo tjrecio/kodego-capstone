@@ -41,8 +41,8 @@ CREATE TABLE `drugprice090822` (
 INSERT INTO `drugprice090822` (`ID`, `drug`, `price range`, `price`) VALUES
 (3, 'medicine 1', '15.35', '15.35'),
 (4, 'medicine 2', '14.93', '14.93'),
-(6, 'medicine 3', '7.00-10.00\r\n', '7.70\r\n'),
-(7, 'medicine 4', '82.00-137.30\r\n', '90.20\r\n');
+(6, 'medicine 3', '7.00-10.00', '7.70'),
+(7, 'medicine 4', '82.00-137.30', '90.20');
 
 -- --------------------------------------------------------
 
