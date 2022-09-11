@@ -34,9 +34,7 @@ session_destroy();
 
   </div>
 
-  <?php
-  include "footer.php";
-  ?>
+
 </body>
 
 </html>

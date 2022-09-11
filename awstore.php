@@ -49,18 +49,27 @@ $row2[] = "";
           $row['1'] = "";
         }
       }
-?>
+      ?>
 
 
       <div id="mainLeft">
+        <div>
+          <div>
+            <p style="font-size: 30px; margin-bottom: 0px; display: flex; flex-wrap: nowrap; justify-content: center"><b>Welcome!</b></p>
+          </div>
+          <div>
+            <p style="font-size: 12px; margin-bottom: 20px; display: flex; flex-wrap: nowrap; justify-content: center">Search for your needed medicines here</p>
+          </div>
+        </div>
+
         <div id="formlm">
 
           <form id="" method="POST" action="awstore.php">
 
             <div id="drugSearch">
               <div>
-                <div style="font-size: 80%;"><i class="fa-solid fa-prescription-bottle-medical"></i>&nbspMedicine</div>
-                <div><input class="inputBoxDrug" type="text" name="drug" style="padding-left: 5px; width: 480px;" placeholder="type-in medicine by prescription name..."></div>
+                <div style="font-size: 80%;"><i class="fa-solid fa-prescription-bottle-medical"></i>&nbspSearch your Medicine</div>
+                <div><input class="inputBoxDrug" type="text" name="drug" style="padding-left: 5px;" placeholder="type-in medicine by prescription name..."></div>
               </div>
               <!-- search button -->
               <button id="drugSearchBtn" type="submit" name="beginsearch"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -84,23 +93,32 @@ $row2[] = "";
           </div>
         </div>
 
-        <div id="formlm">
+        <div id="formlm" style="height: 330px;">
+        <div style="background-color:white; display: flex; flex-wrap: nowrap;">
+              <div style="width: 35%; display: flex; flex-wrap: nowrap; justify-content: center">
+                Store
+              </div>
+              <div style="width: 65%; display: flex; flex-wrap: nowrap; justify-content: center">
+                Address
+              </div>
+            </div>
+          <div id="tableresult" style="height: 300px; overflow-y: auto; border-style: none; border-radius: 0px;">
+            <table>
 
-          <table>
-            <tr>
-              <th>store</th>
-              <th>address</th>
-            </tr>
+              <!-- <tr>
+                <th>Store</th>
+                <th>Address</th>
+              </tr> -->
 
-            <?php
-                  if (isset($_POST['beginsearch'])) {
+              <?php
+              if (isset($_POST['beginsearch'])) {
 
-                    if (!empty($_POST['drug'])) {
-                      $drug = $_POST['drug'];
+                if (!empty($_POST['drug'])) {
+                  $drug = $_POST['drug'];
 
-                      $query2 = "
+                  $query2 = "
                 SELECT
-                    inventory090822.*,
+                    inventory090822.store,
                     storeinfo090822.address
                 FROM
                     inventory090822
@@ -108,39 +126,39 @@ $row2[] = "";
                 ON inventory090822.storeID = storeinfo090822.storeID
                 WHERE `$drug` = 1";
 
-                      $query_run2 = mysqli_query($link, $query2);
+                  $query_run2 = mysqli_query($link, $query2);
 
-                    while($row2 = mysqli_fetch_array($query_run2, MYSQLI_ASSOC)){
+                  while ($row2 = mysqli_fetch_array($query_run2, MYSQLI_ASSOC)) {
 
-                      ?>
+              ?>
 
-                      <tr>
-                        <td><?php echo htmlspecialchars($row2['store']);?></td>
-                        <td><?php echo htmlspecialchars($row2['address']);?></td>
-                      </tr>
+                    <tr>
+                      <td style="border-style: none; border-radius: 0px;"><?php echo htmlspecialchars($row2['store']); ?></td>
+                      <td style="border-style: none; border-radius: 0px;"><?php echo htmlspecialchars($row2['address']); ?></td>
+                    </tr>
 
-                      <?php
-                    }
+              <?php
                   }
-                  mysqli_close($link);
                 }
-            ?>
-          </table>
+              }
+              mysqli_close($link);
+
+              ?>
+
+            </table>
+          </div>
         </div>
       </div>
 
-      <div>
-        <div>
-          <p style="font-size: 30px; margin-bottom: 0px; display: flex; flex-wrap: nowrap; justify-content: center"><b>Welcome!</b></p>
-        </div>
-        <div>
-          <p style="font-size: 12px; margin-bottom: 20px;">Search for your needed medicines here</p>
-        </div>
+      <div id="mainRight">
+        <p>extra space</p>
+        <p>extra space</p>
+        <p>extra space</p>
+        <p>extra space</p>
+
       </div>
 
     </div>
-
-    <?php include 'footer.php' ?>
 
   </div>
 </body>

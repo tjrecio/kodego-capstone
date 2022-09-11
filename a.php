@@ -93,8 +93,6 @@ $row['1'] = "";
       </div>
     </div>
 
-    <?php include 'footer.php' ?>
-
   </div>
 </body>
 

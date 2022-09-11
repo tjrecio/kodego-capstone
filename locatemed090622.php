@@ -110,7 +110,7 @@ if ($result = mysqli_query($link, $sql)) {
 
           </div>
 
-          <?php include 'footer.php' ?>
+
 
         </div>
       </body>
