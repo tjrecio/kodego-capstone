@@ -49,31 +49,8 @@ $row2[] = "";
           $row['1'] = "";
         }
       }
+?>
 
-      if (isset($_POST['beginsearch'])) {
-
-        if (!empty($_POST['drug'])) {
-          $drug = $_POST['drug'];
-
-          $query2 = "
-    SELECT
-        inventory090822.*,
-        storeinfo090822.address
-    FROM
-        inventory090822
-    LEFT JOIN storeinfo090822
-    ON inventory090822.storeID = storeinfo090822.storeID
-    WHERE `$drug` = 1";
-
-          $query_run2 = mysqli_query($link, $query2);
-
-          $row2 = mysqli_fetch_all($query_run2, MYSQLI_ASSOC);
-        } else {
-          $errormessage = "Nothing Selected.";
-        }
-      }
-      mysqli_close($link);
-      ?>
 
       <div id="mainLeft">
         <div id="formlm">
@@ -109,18 +86,48 @@ $row2[] = "";
 
         <div id="formlm">
 
-              <?php foreach($row2 as $rowresults){ ?>
+          <table>
+            <tr>
+              <th>store</th>
+              <th>address</th>
+            </tr>
 
-                
+            <?php
+                  if (isset($_POST['beginsearch'])) {
 
+                    if (!empty($_POST['drug'])) {
+                      $drug = $_POST['drug'];
 
+                      $query2 = "
+                SELECT
+                    inventory090822.*,
+                    storeinfo090822.address
+                FROM
+                    inventory090822
+                LEFT JOIN storeinfo090822
+                ON inventory090822.storeID = storeinfo090822.storeID
+                WHERE `$drug` = 1";
 
-              <?php } ?>
+                      $query_run2 = mysqli_query($link, $query2);
 
+                    while($row2 = mysqli_fetch_array($query_run2, MYSQLI_ASSOC)){
 
+                      ?>
+
+                      <tr>
+                        <td><?php echo htmlspecialchars($row2['store']);?></td>
+                        <td><?php echo htmlspecialchars($row2['address']);?></td>
+                      </tr>
+
+                      <?php
+                    }
+                  }
+                  mysqli_close($link);
+                }
+            ?>
+          </table>
         </div>
       </div>
-
 
       <div>
         <div>
