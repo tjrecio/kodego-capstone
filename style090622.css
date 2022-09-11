@@ -18,7 +18,7 @@ body {
 #header1 {
   padding: 10px 0px 10px 0px;
   background: linear-gradient(to right, #c02425, #f0cb35);
-  box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.384);
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.384);
   position: fixed;
   width: 100%;
 
@@ -63,13 +63,14 @@ body {
   margin-left: 10px;
   margin-right: 10px;
 
-  border-style: solid;
+  border-style: none;
   border-color: rgba(0, 0, 0, 0);
   border-radius: 3px;
   border-width: 1px;
 }
 
-#drugSearchBtn{
+
+#drugSearchBtn {
   height: 54px;
   min-width: 54px;
 
@@ -136,8 +137,8 @@ body {
 }
 
 #drugSearch {
-padding:0px;
-margin: 0px;
+  padding: 0px;
+  margin: 0px;
 
   display: flex;
   /* flex-wrap: wrap; */
@@ -165,7 +166,7 @@ margin: 0px;
   margin: 0px;
   padding: 0px;
   height: 25px;
-  width: 485px;
+  width: 25px;
   border-style: none;
   border-color: black;
   border-radius: 5px;
@@ -185,9 +186,9 @@ margin: 0px;
 
 #errorSpace {
   width: 400px;
-  height: 50px;
+  height: 30px;
   color: white;
-  font-size: 13px;
+  font-size: 12px;
 
   display: flex;
   align-items: center;
@@ -255,7 +256,7 @@ margin: 0px;
   padding: 5px;
   height: 15vh;
   background: linear-gradient(to right, #c02425, #f0cb35);
-  box-shadow: 0px -4px 8px 0px rgba(0,0,0,0.384);
+  box-shadow: 0px -4px 8px 0px rgba(0, 0, 0, 0.384);
 
   display: flex;
   flex-direction: row;
