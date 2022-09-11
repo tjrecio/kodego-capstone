@@ -125,37 +125,9 @@ $row2[] = "";
                   mysqli_close($link);
                 }
             ?>
-
-
-
-
-
-
-
           </table>
-
-          <?php
-          // var_dump($row2);
-          ?>
-
-          <?php
-          // foreach ($row2 as $storeresults) {
-          //   echo htmlspecialchars($storeresults['storeID']);
-          //   echo htmlspecialchars($storeresults['store']);
-          //   echo htmlspecialchars($storeresults['address']);
-          // }
-          ?>
-
-          <?php
-
-
-
-          ?>
-
-
         </div>
       </div>
-
 
       <div>
         <div>
