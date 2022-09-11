@@ -43,7 +43,7 @@ $row['1'] = "";
       //main mysqli
       if (isset($_POST['beginsearch'])) {
 
-        if (!empty($_POST['drug'])){
+        if (!empty($_POST['drug'])) {
           $drug = $_POST['drug'];
 
           $query = "SELECT drugprice090822.drug, drugprice090822.price FROM drugprice090822 WHERE drugprice090822.drug = '$drug';";
@@ -51,8 +51,7 @@ $row['1'] = "";
           $query_run = mysqli_query($link, $query);
 
           $row = mysqli_fetch_row($query_run);
-
-        }else {
+        } else {
           $errormessage = "Nothing Selected.";
           $row['0'] = "";
           $row['1'] = "";
