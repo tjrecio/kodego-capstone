@@ -68,7 +68,7 @@ $row['1'] = "";
           <div id="drugSearch">
             <div>
               <div style="font-size: 80%;"><i class="fa-solid fa-prescription-bottle-medical"></i>&nbspMedicine</div>
-              <div><input class="inputBoxDrug" type="text" name="drug" style="padding-left: 5px; width: 480px;" placeholder="type-in medicine by prescription name..."></div>
+              <div><input class="inputBoxDrug" type="text" name="drug" placeholder="type-in medicine by prescription name..."></div>
             </div>
             <!-- search button -->
             <button id="drugSearchBtn" type="submit" name="beginsearch"><i class="fa-solid fa-magnifying-glass"></i></button>
