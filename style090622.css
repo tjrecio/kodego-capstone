@@ -255,10 +255,9 @@ body {
   margin: 20px;
   padding: 20px;
 
-  background: linear-gradient(to right, #c02425, #f0cb35);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.384), 0 6px 20px 0 rgba(0, 0, 0, 0.384);
-  width: 400px;
-  height: auto;
+  height: 700px;
+  width: 600px;
 
   color: black;
 
@@ -267,6 +266,12 @@ body {
   border-radius: 10px;
   border-width: 0.5px;
 }
+
+#mapCanvas {
+  height: 700px;
+  width: 600px;
+}
+
 
 #formlm table {
   padding: 10px;
