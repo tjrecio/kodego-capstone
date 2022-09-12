@@ -20,14 +20,10 @@ $row2[] = "";
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/6e0e3f1ae2.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style090622.css">
-  <script src="script090422.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwhT23_kcZzV8UymJ0bIdLnnw0oVvCaFk"></script>
+  <script src="index.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
   <title>TEST multi - 090622</title>
-
-  <script>
-    google.maps.event.addDomListener(window, 'load', initMap);
-  </script>
-
 </head>
 
 <body>
@@ -151,44 +147,46 @@ $row2[] = "";
       <div id="mainRight">
         <div id="mapCanvas">
           <?php
-          if (isset($_POST['beginsearch'])) {
+          // if (isset($_POST['beginsearch'])) {
 
-            if (!empty($_POST['drug'])) {
-              $drug = $_POST['drug'];
+          //   if (!empty($_POST['drug'])) {
+          //     $drug = $_POST['drug'];
 
-              $query3 = "
-                  SELECT
-                  inventory090822.store,
-                  storeinfo090822.lat,
-                  storeinfo090822.lon
-                  FROM
-                  inventory090822
-                  LEFT JOIN storeinfo090822
-                  ON inventory090822.storeID = storeinfo090822.storeID
-                  WHERE `$drug` = 1";
+          //     $query3 = "
+          //         SELECT
+          //         inventory090822.store,
+          //         storeinfo090822.lat,
+          //         storeinfo090822.lon
+          //         FROM
+          //         inventory090822
+          //         LEFT JOIN storeinfo090822
+          //         ON inventory090822.storeID = storeinfo090822.storeID
+          //         WHERE `$drug` = 1";
 
-              $query_run3 = mysqli_query($link, $query3);
+          //     $query_run3 = mysqli_query($link, $query3);
 
-              while ($row3 = mysqli_fetch_all($query_run3, MYSQLI_ASSOC)) {
-                
-                echo htmlspecialchars($row3[0]["store"]);
-                echo htmlspecialchars($row3[0]["lat"]);
-                echo htmlspecialchars($row3[0]["lon"]);
-                echo htmlspecialchars($row3[1]["store"]);
-                echo htmlspecialchars($row3[1]["lat"]);
-                echo htmlspecialchars($row3[1]["lon"]);
-                echo htmlspecialchars($row3[2]["store"]);
-                echo htmlspecialchars($row3[2]["lat"]);
-                echo htmlspecialchars($row3[2]["lon"]);
-              };
-            }
-          }
-          mysqli_close($link);
+          //     while ($row3 = mysqli_fetch_all($query_run3, MYSQLI_ASSOC)) {
+
+          //       echo htmlspecialchars($row3[0]["store"]);
+          //       echo htmlspecialchars($row3[0]["lat"]);
+          //       echo htmlspecialchars($row3[0]["lon"]);
+          //       echo htmlspecialchars($row3[1]["store"]);
+          //       echo htmlspecialchars($row3[1]["lat"]);
+          //       echo htmlspecialchars($row3[1]["lon"]);
+          //       echo htmlspecialchars($row3[2]["store"]);
+          //       echo htmlspecialchars($row3[2]["lat"]);
+          //       echo htmlspecialchars($row3[2]["lon"]);
+          //     };
+          //   }
+          // }
+          // mysqli_close($link);
           ?>
+
         </div>
       </div>
     </div>
   </div>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwhT23_kcZzV8UymJ0bIdLnnw0oVvCaFk&callback=initMap&v=weekly" defer></script>
 </body>
 
 </html>

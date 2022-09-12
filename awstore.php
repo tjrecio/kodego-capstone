@@ -21,13 +21,7 @@ $row2[] = "";
   <script src="https://kit.fontawesome.com/6e0e3f1ae2.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style090622.css">
   <script src="script090422.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwhT23_kcZzV8UymJ0bIdLnnw0oVvCaFk"></script>
   <title>TEST multi - 090622</title>
-
-  <script>
-    google.maps.event.addDomListener(window, 'load', initMap);
-  </script>
-
 </head>
 
 <body>
