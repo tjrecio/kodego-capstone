@@ -70,7 +70,7 @@ $row2[] = "";
 
         <div id="formlm">
 
-          <form id="" method="POST" action="awstore.php">
+          <form id="" method="POST" action="awstorewmap.php">
 
             <div id="drugSearch">
               <div>
@@ -149,51 +149,6 @@ $row2[] = "";
       </div>
 
       <div id="mainRight">
-
-        <!-- script -->
-        <script>
-          function initMap() {
-            var map;
-            var bounds = new google.maps.LatLngBounds();
-            var mapOptions = {
-              mapTypeId: 'roadmap'
-            };
-
-            map = new google.maps.Map(document.getElementById("mapCanvas"), mapOptions);
-            map.setTilt(100);
-
-            // adding multiple markers to map
-            var infoWindow = new.google.maps.infoWindow(),
-              marker, i;
-
-            // place markers on the map
-            for (i = 0; i < $row3.length; i++) {
-              var position = new google.maps.LatLng($row3[i][2], $row3[i][3]);
-              bounds.extend(position);
-              marker = new google.maps.Marker({
-                position: position,
-                map: map,
-                title: $row3[i][0]
-              });
-
-              google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                return function() {
-                  infoWindow.setContent(infoWindowContent[1][0]);
-                  infoWindow.open(map, marker);
-                }
-              })(marker, i));
-
-              map.fitbounds(bounds);
-            }
-
-            // zoom level
-            var boundsListener = google.maps.event.addListener((map), 'bounds changed', function(event) {
-              this.setZoom(14);
-              google.maps.event.removeListener(boundsListener);
-            });
-          }
-        </script>
-
         <div id="mapCanvas">
           <?php
           if (isset($_POST['beginsearch'])) {
@@ -215,6 +170,7 @@ $row2[] = "";
               $query_run3 = mysqli_query($link, $query3);
 
               while ($row3 = mysqli_fetch_all($query_run3, MYSQLI_ASSOC)) {
+                
                 echo htmlspecialchars($row3[0]["store"]);
                 echo htmlspecialchars($row3[0]["lat"]);
                 echo htmlspecialchars($row3[0]["lon"]);
@@ -225,18 +181,13 @@ $row2[] = "";
                 echo htmlspecialchars($row3[2]["lat"]);
                 echo htmlspecialchars($row3[2]["lon"]);
               };
-          ?>
-        </div>
-    <?php
             }
           }
           mysqli_close($link);
-    ?>
-
+          ?>
+        </div>
       </div>
-
     </div>
-
   </div>
 </body>
 
