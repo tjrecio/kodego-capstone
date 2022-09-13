@@ -177,8 +177,6 @@ $row2[] = "";
               $query_run3 = mysqli_query($link, $query3);
               $query_run4 = mysqli_query($link, $query4);
 
-              $row3 = mysqli_fetch_array($query_run3, MYSQLI_ASSOC);
-              $row4 = mysqli_fetch_array($query_run4, MYSQLI_ASSOC);
             }
           }
           mysqli_close($link);
@@ -216,7 +214,7 @@ $row2[] = "";
                 <?php
                 if ($query_run4->num_rows > 0) {
                   while ($row4 = $query_run4->fetch_assoc()) {
-                ?>["<?php echo $row4['store'];?>"],
+                ?>["<?php echo $row4['store']; ?>"],
                 <?php
                   }
                 }
@@ -228,7 +226,7 @@ $row2[] = "";
                 marker, i;
 
               // place each marker on the map
-              for (i = 0; i < markers.length; ++i) {
+              for (i = 0; i < markers.length; i++) {
                 var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
                 bounds.extend(position);
                 marker = new google.maps.Marker({
