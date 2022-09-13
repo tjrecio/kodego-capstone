@@ -19,10 +19,9 @@ $row2[] = "";
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/6e0e3f1ae2.js" crossorigin="anonymous"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
   <link rel="stylesheet" href="style090622.css">
   <script src="index.js"></script>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
   <title>TEST multi - 090622</title>
 </head>
 
@@ -33,8 +32,8 @@ $row2[] = "";
 
     <div id="main">
 
+      <!-- query 1 -->
       <?php
-
       if (isset($_POST['beginsearch'])) {
 
         if (!empty($_POST['drug'])) {
@@ -52,7 +51,7 @@ $row2[] = "";
         }
       }
       ?>
-
+      <!-- query 1 -->
 
       <div id="mainLeft">
         <div>
@@ -106,6 +105,8 @@ $row2[] = "";
           </div>
           <div id="tableresult" style="height: 300px; overflow-y: auto; border-style: none; border-radius: 0px;">
             <table>
+
+              <!-- query 2 -->
               <?php
               if (isset($_POST['beginsearch'])) {
 
@@ -127,17 +128,16 @@ $row2[] = "";
                   while ($row2 = mysqli_fetch_array($query_run2, MYSQLI_ASSOC)) {
 
               ?>
-
                     <tr>
                       <td style="border-style: none; border-radius: 0px;"><?php echo htmlspecialchars($row2['store']); ?></td>
                       <td style="border-style: none; border-radius: 0px;"><?php echo htmlspecialchars($row2['address']); ?></td>
                     </tr>
-
               <?php
-                  }
-                }
+                  };
+                };
               }
               ?>
+              <!-- query 2 -->
 
             </table>
           </div>
@@ -147,41 +147,119 @@ $row2[] = "";
       <div id="mainRight">
         <div id="mapCanvas">
           <?php
-          // if (isset($_POST['beginsearch'])) {
+          if (isset($_POST['beginsearch'])) {
 
-          //   if (!empty($_POST['drug'])) {
-          //     $drug = $_POST['drug'];
+            if (!empty($_POST['drug'])) {
+              $drug = $_POST['drug'];
 
-          //     $query3 = "
-          //         SELECT
-          //         inventory090822.store,
-          //         storeinfo090822.lat,
-          //         storeinfo090822.lon
-          //         FROM
-          //         inventory090822
-          //         LEFT JOIN storeinfo090822
-          //         ON inventory090822.storeID = storeinfo090822.storeID
-          //         WHERE `$drug` = 1";
+              $query3 = "
+              SELECT
+              inventory090822.store,
+              storeinfo090822.lat,
+              storeinfo090822.lon
+              FROM
+              inventory090822
+              LEFT JOIN storeinfo090822
+              ON inventory090822.storeID = storeinfo090822.storeID
+              WHERE `$drug` = 1";
 
-          //     $query_run3 = mysqli_query($link, $query3);
+              $query4 = "
+              SELECT
+              inventory090822.store,
+              storeinfo090822.lat,
+              storeinfo090822.lon
+              FROM
+              inventory090822
+              LEFT JOIN storeinfo090822
+              ON inventory090822.storeID = storeinfo090822.storeID
+              WHERE `$drug` = 1";
 
-          //     while ($row3 = mysqli_fetch_all($query_run3, MYSQLI_ASSOC)) {
+              $query_run3 = mysqli_query($link, $query3);
+              $query_run4 = mysqli_query($link, $query4);
 
-          //       echo htmlspecialchars($row3[0]["store"]);
-          //       echo htmlspecialchars($row3[0]["lat"]);
-          //       echo htmlspecialchars($row3[0]["lon"]);
-          //       echo htmlspecialchars($row3[1]["store"]);
-          //       echo htmlspecialchars($row3[1]["lat"]);
-          //       echo htmlspecialchars($row3[1]["lon"]);
-          //       echo htmlspecialchars($row3[2]["store"]);
-          //       echo htmlspecialchars($row3[2]["lat"]);
-          //       echo htmlspecialchars($row3[2]["lon"]);
-          //     };
-          //   }
-          // }
-          // mysqli_close($link);
+              $row3 = mysqli_fetch_array($query_run3, MYSQLI_ASSOC);
+              $row4 = mysqli_fetch_array($query_run4, MYSQLI_ASSOC);
+            }
+          }
+          mysqli_close($link);
           ?>
 
+          <script>
+            function initMap() {
+              var bounds = new google.maps.LatLngBounds();
+              var mapOptions = {
+                mapTypeID: 'roadmap',
+              };
+
+              // Display a map on the web page
+              const map = new google.maps.Map(document.getElementById("mapCanvas"), {
+                zoom: 12,
+                center: {
+                  lat: 14.676208,
+                  lng: 121.043861
+                },
+              });
+
+              // Multiple markers location, lat and lon
+              var markers = [
+                <?php
+                if ($query_run3->num_rows > 0) {
+                  while ($row3 = $query_run3->fetch_assoc()) {
+                    echo '["' . $row3['store'] . '", ' . $row3['lat'] . ', ' . $row3['lon'] . '],';
+                  }
+                }
+                ?>
+              ];
+
+              // info window content
+              var infoWindowContent = [
+                <?php
+                if ($query_run4->num_rows > 0) {
+                  while ($row4 = $query_run4->fetch_assoc()) {
+                ?>["<?php echo $row4['store'];?>"],
+                <?php
+                  }
+                }
+                ?>
+              ];
+
+              // add multiple markers to map
+              var infoWindow = new google.maps.InfoWindow(),
+                marker, i;
+
+              // place each marker on the map
+              for (i = 0; i < markers.length; ++i) {
+                var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+                bounds.extend(position);
+                marker = new google.maps.Marker({
+                  position: position,
+                  map: map,
+                  title: markers[i][0]
+                });
+
+                // add info window to marker
+                google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                  return function() {
+                    infoWindow.setContent(infoWindowContent[i][0]);
+                    infoWindow.open
+                  }
+                })(marker, i));
+
+                // center map to fit all markers on the screen
+                map.fitBounds(bounds);
+              }
+
+              // set zoom level
+              var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+                this.setZoom(12);
+                google.maps.event.removeListener(boundsListener);
+              });
+            }
+          </script>
+          <script>
+            // load initialize function
+            window.initMap = initMap;
+          </script>
         </div>
       </div>
     </div>
