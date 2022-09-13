@@ -31,8 +31,8 @@ $row2[] = "";
 
     <div id="main">
 
+      <!-- query 1 -->
       <?php
-
       if (isset($_POST['beginsearch'])) {
 
         if (!empty($_POST['drug'])) {
@@ -50,7 +50,7 @@ $row2[] = "";
         }
       }
       ?>
-
+      <!-- query 1 -->
 
       <div id="mainLeft">
         <div>
@@ -104,6 +104,8 @@ $row2[] = "";
           </div>
           <div id="tableresult" style="height: 300px; overflow-y: auto; border-style: none; border-radius: 0px;">
             <table>
+
+              <!-- query 2 -->
               <?php
               if (isset($_POST['beginsearch'])) {
 
@@ -125,22 +127,28 @@ $row2[] = "";
                   while ($row2 = mysqli_fetch_array($query_run2, MYSQLI_ASSOC)) {
 
               ?>
-
                     <tr>
                       <td style="border-style: none; border-radius: 0px;"><?php echo htmlspecialchars($row2['store']); ?></td>
                       <td style="border-style: none; border-radius: 0px;"><?php echo htmlspecialchars($row2['address']); ?></td>
                     </tr>
-
               <?php
                   }
                 }
               }
               mysqli_close($link);
               ?>
+              <!-- query 2 -->
 
             </table>
           </div>
         </div>
+
+        <div id="mainRight">
+          <div id="mapCanvas">
+
+          </div>
+        </div>
+
       </div>
     </div>
 

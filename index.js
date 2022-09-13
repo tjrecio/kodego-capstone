@@ -1,10 +1,16 @@
-let map;
+// function initMap() {
+//   var map;
+//   var bounds = new google.maps.LatLngBounds();
+//   var mapOptions = {
+//     mapTypeID: 'roadmap'
+//   };
 
-function initMap() {
-  map = new google.maps.Map(document.getElementById("mapCanvas"), {
-    center: { lat: 14.675788, lng: 121.054634 },
-    zoom: 12,
-  });
-}
+//   // Display a map on the web page
 
-window.initMap = initMap;
+//   // Multiple markers location, lat and lon
+//   var markers =
+
+// };
+
+
+
