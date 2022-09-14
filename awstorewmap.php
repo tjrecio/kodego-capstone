@@ -39,7 +39,7 @@ $row2[] = "";
         if (!empty($_POST['drug'])) {
           $drug = $_POST['drug'];
 
-          $query = "SELECT drugprice090822.drug, drugprice090822.price FROM drugprice090822 WHERE drugprice090822.drug = '$drug';";
+          $query = "SELECT drugprice090822.drug, drugprice090822.pricerange FROM drugprice090822 WHERE drugprice090822.drug = '$drug';";
 
           $query_run = mysqli_query($link, $query);
 
@@ -70,7 +70,7 @@ $row2[] = "";
             <div id="drugSearch">
               <div>
                 <div style="font-size: 80%;"><i class="fa-solid fa-prescription-bottle-medical"></i>&nbspSearch your Medicine</div>
-                <div><input class="inputBoxDrug" type="text" name="drug" placeholder="type-in medicine by prescription name..."></div>
+                <div><input class="inputBoxDrug" type="text" name="drug" placeholder="type-in medicine by generic name..."></div>
               </div>
               <!-- search button -->
               <button id="drugSearchBtn" type="submit" name="beginsearch"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -89,7 +89,7 @@ $row2[] = "";
             <div><input class="inputBoxLm" type="text" name="drug1" style="padding-left: 5px;" value="<?php echo htmlspecialchars($row['0']); ?>"></div>
           </div>
           <div id="priceOutput">
-            <div style="font-size: 80%;"><i class="fa-solid fa-peso-sign"></i>&nbspPrice</div>
+            <div style="font-size: 80%;"><i class="fa-solid fa-peso-sign"></i>&nbspPrice Range</div>
             <div><input class="inputBoxLm" type="float" name="price" style="padding-left: 5px; padding-right: 5px; width: 145px; text-align: end;" value="<?php echo htmlspecialchars($row['1']); ?>"></div>
           </div>
         </div>
@@ -236,7 +236,7 @@ $row2[] = "";
                 });
 
                 // add info window to marker
-                google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                google.maps.event.addListener(marker, 'hover', (function(marker, i) {
                   return function() {
                     infoWindow.setContent(infoWindowContent[i][0]);
                     infoWindow.open
