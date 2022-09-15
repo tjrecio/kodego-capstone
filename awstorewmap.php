@@ -146,6 +146,8 @@ $row2[] = "";
 
       <div id="mainRight">
         <div id="mapCanvas">
+
+          <!-- query 3 and 4 -->
           <?php
           if (isset($_POST['beginsearch'])) {
 
@@ -176,11 +178,11 @@ $row2[] = "";
 
               $query_run3 = mysqli_query($link, $query3);
               $query_run4 = mysqli_query($link, $query4);
-
             }
           }
           mysqli_close($link);
           ?>
+          <!-- query 3 and 4 -->
 
           <script>
             function initMap() {
