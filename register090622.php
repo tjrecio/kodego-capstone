@@ -18,8 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         mysqli_stmt_bind_param($stmt, "sss", $param_storeID, $param_username, $param_password);
 
         if (mysqli_stmt_execute($stmt)) {
-          header("location: login090622.php");
-        } else {
+          // header("location: login090622.php");
+        }else{
           $errormessage = "Username already exists!";
         }
         mysqli_stmt_close($stmt);

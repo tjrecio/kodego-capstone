@@ -7,6 +7,11 @@ if (!isset($_SESSION['username'])) {
   $errormessage = "Oops! Your need to login first.";
 }
 
+$row5['1'] = "";
+$row5['0'] = "";
+$row5['2'] = "";
+
+
 ?>
 
 <!DOCTYPE html>
@@ -101,14 +106,14 @@ if (!isset($_SESSION['username'])) {
               <div id="tableresult" style="height: 300px; overflow-y: auto; border-style: none; border-radius: 0px;">
                 <table>
 
-                  <!-- query 2 -->
+                  <!-- query 6 -->
                   <?php
                   if (isset($_POST['beginsearch'])) {
 
                     if (!empty($_POST['drug'])) {
                       $drug = $_POST['drug'];
 
-                      $query2 = "
+                      $query6 = "
                 SELECT
                     inventory090822.store,
                     storeinfo090822.address
@@ -118,9 +123,9 @@ if (!isset($_SESSION['username'])) {
                 ON inventory090822.storeID = storeinfo090822.storeID
                 WHERE `$drug` = 1";
 
-                      $query_run2 = mysqli_query($link, $query2);
+                      $query_run6 = mysqli_query($link, $query6);
 
-                      while ($row2 = mysqli_fetch_array($query_run2, MYSQLI_ASSOC)) {
+                      while ($row6 = mysqli_fetch_array($query_run6, MYSQLI_ASSOC)) {
 
                   ?>
                         <tr>
@@ -132,7 +137,7 @@ if (!isset($_SESSION['username'])) {
                     };
                   }
                   ?>
-                  <!-- query 2 -->
+                  <!-- query 6 -->
 
                 </table>
               </div>
