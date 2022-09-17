@@ -68,11 +68,11 @@ $row5['2'] = "";
           <div id="dboardMainBottomHeader">
             <div style="margin-bottom: 15px; width: 100%; display: flex; justify-content: space-evenly; align-self: center;">
               <div style="width: 70%;">
-                <div style="font-size: 80%;"><i class="fa-solid fa-tag"></i>&nbspStore Name</div>
+                <div style="font-size: 80%;"><i class="fa-solid fa-store"></i>&nbspStore Name</div>
                 <input id="store" style="padding-left: 5px; padding-right: 5px; height: 25px; width: 400px; border-style: none; border-radius: 5px;" value="<?php echo htmlspecialchars($row5['1']); ?>">
               </div>
               <div style="width: 30%;">
-                <div style="font-size: 80%;"><i class="fa-solid fa-hashtag"></i>&nbspStore ID</div>
+                <div style="font-size: 80%;"><i class="fa-solid fa-id-card"></i>&nbspStore License Number</div>
                 <input id="storeID" style="padding-left: 5px; padding-right: 5px; height: 25px; width: 200px; border-style: none; border-radius: 5px;" value="<?php echo htmlspecialchars($row5['0']); ?>">
               </div>
             </div>
