@@ -233,6 +233,23 @@ body {
   border-width: 0.5px;
 }
 
+#formMainEdit {
+  margin: 20px;
+  padding: 20px;
+
+  background: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.384), 0 6px 20px 0 rgba(0, 0, 0, 0.384);
+  width: 400px;
+  height: auto;
+
+  color: black;
+
+  border-style: none;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  border-width: 0.5px;
+}
+
 #formlm {
   margin: 20px;
   padding: 20px;
