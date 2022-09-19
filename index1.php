@@ -63,9 +63,8 @@
 
                 <div class="content">
                     <h2>Welcome To Meditrack</h2>
-                    <p class="lead">Find your medicine in some easy clicks. Look for the nearest drugstore in your area. Look for the availability of the medicine.</p>
-                    <button class="btn btn-dark btn-lg"> <a href="awstorewmap.php" class="bg-dark"
-                            style="color: white; text-decoration: none;"> Search For Medecine </a></button>
+                    <h3 class="lead">A more convinient way of finding your medecine</h3>
+                    <?php include 'header.php' ?>
                 </div>
             </div>
         </div>
@@ -81,8 +80,8 @@
       ></span>
       <p class="service-features-title fs-4">Search Your Medicine</p>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Search for the medicine you are looking for. 
+        Type the brand and look in the map where is it available.
       </p>
     </div>
     <div>
@@ -91,8 +90,7 @@
       ></span>
       <p class="service-features-title fs-4">Look For Drugstore</p>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Look and search for the nearest and available Drugstore in your area.
       </p>
     </div>
     <div>
@@ -101,8 +99,7 @@
       ></span>
       <p class="service-features-title fs-4">Check For Availability</p>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Look if the medicine you are looking for is availble and has stock in the Drugstore.
       </p>
     </div>
     <div>
@@ -111,8 +108,7 @@
         ></span>
         <p class="service-features-title fs-4">Become A Partner</p>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Become a partner with us, regiser and become one of the more accecible Drugstore in your area.
         </p>
       </div>
   </div>
@@ -122,14 +118,9 @@
     <div class="about-us-wrapper">
       <div class="about-us-text">
         <p class="lead">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat.
+          Meditrack is a Web-Application built this year 2022 aiming to help the residents of quezon city to a more accessible and more convinient way of looking for medicine.
+          Meditrack is founded by three young men who experience the hectic in going in long lines in the drugstore but ended up buying nothing. This three young men brainstorm and
+          eneded up making the Web-Application.
         </p>
       </div>
       <div class="about-us-image">

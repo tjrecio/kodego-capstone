@@ -7,4 +7,7 @@
     <button id="buttonstyleheaderRight" onclick="document.location='login090622.php'"><i class="fa-solid fa-right-to-bracket"></i>&nbsp;Login</button>
     <button id="buttonstyleheaderRight" onclick="document.location='register090622.php'"><i class="fa-solid fa-pen-to-square"></i>&nbsp;Register</button>
   </div>
+    <div id="herobutton">
+    <button id="buttonstyleherobutton" onclick="document.location='awstorewmap.php'"><i class="fa-solid fa-magnifying-glass-location"></i>&nbsp;Search For Medicine</button>
+    </div>
 </div>
