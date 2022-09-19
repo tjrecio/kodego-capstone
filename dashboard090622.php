@@ -94,13 +94,6 @@ $row5['2'] = "";
 
             </div>
             <div id="dboardMainBottomBodyTable">
-              //
-
-              <!-- linking $query5 and $query6 -->
-              <?php
-              $storeID = $row5['0'];
-              ?>
-
               <div style="background-color:white; display: flex; flex-wrap: nowrap;">
                 <div style="width: 65%; display: flex; flex-wrap: nowrap; justify-content: center">
                   Drug Name and Description
@@ -110,16 +103,14 @@ $row5['2'] = "";
                 </div>
               </div>
               <div id="tableresult" style="height: 300px; overflow-y: auto; border-style: none; border-radius: 0px;">
-                <table>
+                <table style="background-color:white;">
 
                   <!-- query 6 -->
                   <?php
+                  // linking $query5 and $query6
                   $storeID = $row5['0'];
 
-                  $query6 = "SELECT inventory090822.storeid, 'medicine 1' as medicine, `medicine 1` as avl FROM `inventory090822` WHERE inventory090822.storeid = '$storeID' UNION ALL
-SELECT inventory090822.storeid, 'medicine 2' as medicine, `medicine 2` as avl FROM `inventory090822` WHERE inventory090822.storeid = '$storeID' UNION ALL
-SELECT inventory090822.storeid, 'medicine 3' as medicine, `medicine 3` as avl FROM `inventory090822` WHERE inventory090822.storeid = '$storeID' UNION ALL
-SELECT inventory090822.storeid, 'medicine 4' as medicine, `medicine 4` as avl FROM `inventory090822` WHERE inventory090822.storeid = '$storeID'";
+                  include 'query6sqlsyntax.php';
 
                   $query_run6 = mysqli_query($link, $query6);
 
@@ -128,8 +119,13 @@ SELECT inventory090822.storeid, 'medicine 4' as medicine, `medicine 4` as avl FR
                     // var_dump($row6);
                   ?>
                     <tr>
-                      <td style="border-style: solid; border-radius: 0px;"><?php echo htmlspecialchars($row6['medicine']); ?></td>
-                      <td style="border-style: solid; border-radius: 0px;"><?php echo htmlspecialchars($row6['avl']); ?></td>
+                      <td style="width: 390px; border-style: none; border-radius: 0px;"><?php echo htmlspecialchars($row6['medicine']); ?></td>
+                      <td style="width: 210px; border-style: none; border-radius: 0px; text-align: center">
+                        <?php
+
+                        echo htmlspecialchars($row6['avl']);
+
+                        ?></td>
                     </tr>
                   <?php
                   };
@@ -140,8 +136,6 @@ SELECT inventory090822.storeid, 'medicine 4' as medicine, `medicine 4` as avl FR
 
                 </table>
               </div>
-
-              //
             </div>
           </div>
         </div>
