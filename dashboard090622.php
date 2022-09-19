@@ -55,7 +55,7 @@ $row5['2'] = "";
 
       $row5 = mysqli_fetch_row($query_run5);
 
-      mysqli_close($link);
+      // mysqli_close($link);
       ?>
       <!-- query 5 -->
 
@@ -95,6 +95,12 @@ $row5['2'] = "";
             </div>
             <div id="dboardMainBottomBodyTable">
               //
+
+              <!-- linking $query5 and $query6 -->
+              <?php
+              $storeID = $row5['0'];
+              ?>
+
               <div style="background-color:white; display: flex; flex-wrap: nowrap;">
                 <div style="width: 65%; display: flex; flex-wrap: nowrap; justify-content: center">
                   Drug Name and Description
@@ -108,34 +114,27 @@ $row5['2'] = "";
 
                   <!-- query 6 -->
                   <?php
-                  if (isset($_POST['beginsearch'])) {
+                  $storeID = $row5['0'];
 
-                    if (!empty($_POST['drug'])) {
-                      $drug = $_POST['drug'];
+                  $query6 = "SELECT inventory090822.storeid, 'medicine 1' as medicine, `medicine 1` as avl FROM `inventory090822` WHERE inventory090822.storeid = '$storeID' UNION ALL
+SELECT inventory090822.storeid, 'medicine 2' as medicine, `medicine 2` as avl FROM `inventory090822` WHERE inventory090822.storeid = '$storeID' UNION ALL
+SELECT inventory090822.storeid, 'medicine 3' as medicine, `medicine 3` as avl FROM `inventory090822` WHERE inventory090822.storeid = '$storeID' UNION ALL
+SELECT inventory090822.storeid, 'medicine 4' as medicine, `medicine 4` as avl FROM `inventory090822` WHERE inventory090822.storeid = '$storeID'";
 
-                      $query6 = "
-                SELECT
-                    inventory090822.store,
-                    storeinfo090822.address
-                FROM
-                    inventory090822
-                LEFT JOIN storeinfo090822
-                ON inventory090822.storeID = storeinfo090822.storeID
-                WHERE `$drug` = 1";
+                  $query_run6 = mysqli_query($link, $query6);
 
-                      $query_run6 = mysqli_query($link, $query6);
+                  while ($row6 = mysqli_fetch_array($query_run6, MYSQLI_ASSOC)) {
 
-                      while ($row6 = mysqli_fetch_array($query_run6, MYSQLI_ASSOC)) {
-
+                    // var_dump($row6);
                   ?>
-                        <tr>
-                          <td style="border-style: none; border-radius: 0px;"><?php echo htmlspecialchars($row2['store']); ?></td>
-                          <td style="border-style: none; border-radius: 0px;"><?php echo htmlspecialchars($row2['address']); ?></td>
-                        </tr>
+                    <tr>
+                      <td style="border-style: solid; border-radius: 0px;"><?php echo htmlspecialchars($row6['medicine']); ?></td>
+                      <td style="border-style: solid; border-radius: 0px;"><?php echo htmlspecialchars($row6['avl']); ?></td>
+                    </tr>
                   <?php
-                      };
-                    };
-                  }
+                  };
+
+                  mysqli_close($link);
                   ?>
                   <!-- query 6 -->
 
