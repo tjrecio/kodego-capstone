@@ -144,6 +144,13 @@ $row5['2'] = "";
 
                 </table>
               </div>
+              <div id="errorSpace">
+              <?php
+              if (isset($errormessage)) {
+                echo '<i class="fa-solid fa-circle-exclamation"></i>' . "&nbsp" . $errormessage;
+              }
+              ?>
+            </div>
             </div>
           </div>
         </div>
