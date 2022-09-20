@@ -1,11 +1,12 @@
-html {
+html 
+{
   scroll-behavior: smooth;
 }
 
-body {
+body 
+{
   margin: 0px;
-  background: white;
-
+  background: #6497B1;  
   font-size: 20px;
 
   font-family: 'Poppins', sans-serif;
@@ -15,25 +16,24 @@ body {
   border-width: 0.5px;
 }
 
-#header1 {
-  padding: 10px 0px 10px 0px;
-  background: linear-gradient(to right, #c02425, #f0cb35);
+#header1 
+{
+  padding: 8px 0px 8px 0px;
+  background: #6497B1;    
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.384);
   position: fixed;
   width: 100%;
 
   display: flex;
-  /* flex-wrap: wrap; */
   justify-content: space-evenly;
   align-self: center;
 
   border-style: none;
   border-color: black;
-  /* border-radius: 3px; */
   border-width: 1px;
 }
-
-.buttonstyle {
+.buttonstyle 
+{
   height: 35px;
   width: 120px;
 
@@ -43,7 +43,8 @@ body {
   border-width: 1px;
 }
 
-#buttonstyleheaderLeft {
+#buttonstyleheaderLeft 
+{
   height: 35px;
   min-width: 100px;
 
@@ -56,21 +57,26 @@ body {
   border-width: 1px;
 }
 
-#buttonstyleheaderRight {
+#buttonstyleheaderRight 
+{
   height: 35px;
   min-width: 110px;
 
   margin-left: 10px;
   margin-right: 10px;
 
+  padding-right: 10px;
+
   border-style: none;
   border-color: rgba(0, 0, 0, 0);
-  border-radius: 3px;
+  border-radius: 5px;
   border-width: 1px;
+
 }
 
 
-#drugSearchBtn {
+#drugSearchBtn 
+{
   height: 54px;
   min-width: 54px;
 
@@ -84,10 +90,10 @@ body {
 
 }
 
-#headerLeft {
+#headerLeft 
+{
   padding: 10px 0px 10px 0px;
   background-color: rgba(255, 255, 255, 0);
-  /* position: fixed; */
   width: 35%;
 
   display: flex;
@@ -97,11 +103,11 @@ body {
 
   border-style: none;
   border-color: black;
-  /* border-radius: 3px; */
   border-width: 1px;
 }
 
-#headerRight {
+#headerRight 
+{
   padding: 10px 0px 10px 0px;
   background-color: rgba(255, 255, 255, 0);
   width: 65%;
@@ -116,7 +122,8 @@ body {
   border-width: 1px;
 }
 
-#main {
+#main 
+{
   padding-top: 80px;
   height: 90vh;
 
@@ -134,22 +141,22 @@ body {
   border-width: 1px;
 }
 
-#drugSearch {
+#drugSearch 
+{
   padding: 0px;
   margin: 0px;
 
   display: flex;
-  /* flex-wrap: wrap; */
   justify-content: space-between;
   align-self: center;
 
   border-style: none;
   border-color: black;
-  /* border-radius: 3px; */
   border-width: 1px;
 }
 
-.inputBox {
+.inputBox 
+{
   margin: 0px;
   padding: 0px;
   height: 25px;
@@ -160,7 +167,8 @@ body {
   border-width: 1px;
 }
 
-.inputBoxDrug {
+.inputBoxDrug 
+{
   margin: 0px;
   padding: 0px;
   padding-left: 5px;
@@ -172,7 +180,8 @@ body {
   border-width: 1px;
 }
 
-.inputBoxLm {
+.inputBoxLm 
+{
   margin: 0px;
   padding: 0px;
   height: 25px;
@@ -183,7 +192,8 @@ body {
   border-width: 1px;
 }
 
-#errorSpace {
+#errorSpace 
+{
   width: 400px;
   height: 30px;
   color: white;
@@ -198,11 +208,12 @@ body {
   border-width: 1px;
 }
 
-#submitBtn {
+#submitBtn 
+{
   height: 35px;
   width: 100px;
   background-color: #061700;
-  color: white;
+  color:#9bc3df;
   border-style: none;
   border-color: rgba(255, 255, 255, 0);
   border-radius: 5px;
@@ -210,19 +221,21 @@ body {
   transition: .3s;
 }
 
-#submitBtn:hover {
-  background-color: #52c234;
+#submitBtn:hover 
+{
+  background-color: #6497B1;
   color: black;
 }
 
 #formMain,
-#loginMain {
+#loginMain 
+{
   margin: 20px;
   padding: 20px;
-
-  background: linear-gradient(to right, #c02425, #f0cb35);
+  padding-left: 25px;
+  background: #9bc3df;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.384), 0 6px 20px 0 rgba(0, 0, 0, 0.384);
-  width: 400px;
+  width: 345px;
   height: auto;
 
   color: black;
@@ -233,11 +246,12 @@ body {
   border-width: 0.5px;
 }
 
-#formMainEdit {
+#formMainEdit 
+{
   margin: 20px;
   padding: 20px;
-
-  background: white;
+  padding-top:10px ;
+  background: #9bc3df;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.384), 0 6px 20px 0 rgba(0, 0, 0, 0.384);
   width: 400px;
   height: auto;
@@ -253,8 +267,8 @@ body {
 #formlm {
   margin: 20px;
   padding: 20px;
-
-  background: linear-gradient(to right, #c02425, #f0cb35);
+  
+  background:  #9bc3df;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.384), 0 6px 20px 0 rgba(0, 0, 0, 0.384);
   width: 400px;
   height: auto;
@@ -267,10 +281,12 @@ body {
   border-width: 0.5px;
 }
 
-#mainRight {
+#mainRight 
+{
   margin: 20px;
   padding: 20px;
-  background: linear-gradient(to right, #c02425, #f0cb35);
+  
+  background:  #9bc3df;  
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.384), 0 6px 20px 0 rgba(0, 0, 0, 0.384);
   height: 700px;
   width: 600px;
@@ -291,7 +307,7 @@ body {
 
 #formlm table {
   padding: 10px;
-  background-color: white;
+  background:  #9bc3df;  
   font-size: 15px;
   max-height: 300px;
 
@@ -302,7 +318,7 @@ body {
 
 #formlm td {
   padding: 10px;
-  background-color: white;
+  background-color: #B3CDE0;
   font-size: 13px;
 
   border: 1px none;
@@ -312,7 +328,7 @@ body {
 
 #dboardMain {
   margin: 0px;
-  padding-top: 15px;
+  padding-top: 50px;
   padding-bottom: 15px;
   padding: 0px;
   height: 850px;
@@ -348,7 +364,7 @@ body {
   margin-bottom: 15px;
   padding: 0px;
 
-  background: linear-gradient(to right, #c02425, #f0cb35);
+  background: #9bc3df;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.384), 0 6px 20px 0 rgba(0, 0, 0, 0.384);
 
   height: 770px;
@@ -394,8 +410,8 @@ body {
 #footer {
   padding: 5px;
   height: 15vh;
-  background: linear-gradient(to right, #c02425, #f0cb35);
-  box-shadow: 0px -4px 8px 0px rgba(0, 0, 0, 0.384);
+ 
+  box-shadow: 0px -4px 8px 0px rgba(237, 231, 231, 0.384);
 
   display: flex;
   flex-direction: row;
@@ -444,3 +460,4 @@ body {
   border-radius: 3px;
   border-width: 1px;
 }
+

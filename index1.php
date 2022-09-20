@@ -1,3 +1,7 @@
+<?php
+
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 
@@ -29,31 +33,7 @@
 </head>
 
 <body>
-    <!--Starts NavBar-->
-    <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #253da1;">
-        <div class="container-fluid">
-            <a class="navbar-brand px-5" href="#">MediTrack</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                <ul class="navbar-nav px-5">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Log In</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Register</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!--NavBar Ends Here-->
+              <?php include 'herobutton.php' ?>
     <!--Hero Page-->
     
     <section class="hero sp-2" id="about">
@@ -64,7 +44,7 @@
                 <div class="content">
                     <h2>Welcome To Meditrack</h2>
                     <h3 class="lead">A more convinient way of finding your medecine</h3>
-                    <?php include 'header.php' ?>
+                    <?php include 'button.php' ?>
                 </div>
             </div>
         </div>

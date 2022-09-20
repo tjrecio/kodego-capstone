@@ -1,21 +1,465 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
-
-*{
-  font-family: "Lato", sans-serif;
-  font-size: 14px;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
-}
-.navbar {
-    background: linear-gradient(to right, #ad5389, #3c1053);
+html 
+{
+  scroll-behavior: smooth;
 }
 
-body {
-  background-color: antiquewhite;
-  background-image: linear-gradient(to right , #1c4966, #206d98, #3792cd, #90e0ef);
+body 
+{
+  margin: 0px;
+  background: #6497B1;  
+  font-size: 20px;
+
+  font-family: 'Poppins', sans-serif;
+  border-style: none;
+  border-color: black;
+  border-radius: 3px;
+  border-width: 0.5px;
 }
+#header2 
+{
+  padding: 8px 0px 8px 0px;
+  background: #6497B1;    
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.384);
+  position: fixed;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-self: center;
+
+  border-style: none;
+  border-color: black;
+  border-width: 1px;
+}
+.buttonstyle 
+{
+  height: 35px;
+  width: 120px;
+
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 3px;
+  border-width: 1px;
+}
+
+#buttonstyleheaderLeft 
+{
+  height: 35px;
+  min-width: 100px;
+
+  margin-left: 10px;
+  margin-right: 10px;
+
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 3px;
+  border-width: 1px;
+}
+
+#buttonstyleheaderRight 
+{
+  height: 35px;
+  min-width: 110px;
+
+  margin-left: 10px;
+  margin-right: 10px;
+
+  padding-right: 10px;
+
+  border-style: none;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  border-width: 1px;
+
+}
+
+
+#drugSearchBtn 
+{
+  height: 54px;
+  min-width: 54px;
+
+  margin-left: 10px;
+  margin-right: 10px;
+
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 6px;
+  border-width: 1px;
+
+}
+
+#headerLeft 
+{
+  padding: 10px 0px 10px 0px;
+  background-color: rgba(255, 255, 255, 0);
+  width: 35%;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-self: center;
+
+  border-style: none;
+  border-color: black;
+  border-width: 1px;
+}
+
+#headerRight 
+{
+  padding: 10px 0px 10px 0px;
+  background-color: rgba(255, 255, 255, 0);
+  width: 65%;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-self: center;
+
+  border-style: none;
+  border-color: black;
+  border-width: 1px;
+}
+
+#main 
+{
+  padding-top: 80px;
+  height: 90vh;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+
+  overflow: auto;
+
+  border-style: none;
+  border-color: black;
+  border-radius: 3px;
+  border-width: 1px;
+}
+
+#drugSearch 
+{
+  padding: 0px;
+  margin: 0px;
+
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+
+  border-style: none;
+  border-color: black;
+  border-width: 1px;
+}
+
+.inputBox 
+{
+  margin: 0px;
+  padding: 0px;
+  height: 25px;
+  width: 300px;
+  border-style: none;
+  border-color: black;
+  border-radius: 5px;
+  border-width: 1px;
+}
+
+.inputBoxDrug 
+{
+  margin: 0px;
+  padding: 0px;
+  padding-left: 5px;
+  height: 25px;
+  width: 330px;
+  border-style: none;
+  border-color: black;
+  border-radius: 5px;
+  border-width: 1px;
+}
+
+.inputBoxLm 
+{
+  margin: 0px;
+  padding: 0px;
+  height: 25px;
+  width: 150px;
+  border-style: none;
+  border-color: black;
+  border-radius: 5px;
+  border-width: 1px;
+}
+
+#errorSpace 
+{
+  width: 400px;
+  height: 30px;
+  color: white;
+  font-size: 12px;
+
+  display: flex;
+  align-items: center;
+
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  border-width: 1px;
+}
+
+#submitBtn 
+{
+  height: 35px;
+  width: 100px;
+  background-color: #061700;
+  color:#9bc3df;
+  border-style: none;
+  border-color: rgba(255, 255, 255, 0);
+  border-radius: 5px;
+  border-width: 0.5px;
+  transition: .3s;
+}
+
+#submitBtn:hover 
+{
+  background-color: #6497B1;
+  color: black;
+}
+
+#formMain,
+#loginMain 
+{
+  margin: 20px;
+  padding: 20px;
+  padding-left: 25px;
+  background: #9bc3df;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.384), 0 6px 20px 0 rgba(0, 0, 0, 0.384);
+  width: 345px;
+  height: auto;
+
+  color: black;
+
+  border-style: none;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  border-width: 0.5px;
+}
+
+#formMainEdit 
+{
+  margin: 20px;
+  padding: 20px;
+  padding-top:10px ;
+  background: #9bc3df;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.384), 0 6px 20px 0 rgba(0, 0, 0, 0.384);
+  width: 400px;
+  height: auto;
+
+  color: black;
+
+  border-style: none;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  border-width: 0.5px;
+}
+
+#formlm {
+  margin: 20px;
+  padding: 20px;
+  
+  background:  #9bc3df;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.384), 0 6px 20px 0 rgba(0, 0, 0, 0.384);
+  width: 400px;
+  height: auto;
+
+  color: black;
+
+  border-style: none;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  border-width: 0.5px;
+}
+
+#mainRight 
+{
+  margin: 20px;
+  padding: 20px;
+  
+  background:  #9bc3df;  
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.384), 0 6px 20px 0 rgba(0, 0, 0, 0.384);
+  height: 700px;
+  width: 600px;
+
+  color: black;
+
+  border-style: none;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  border-width: 0.5px;
+}
+
+#mapCanvas {
+  height: 700px;
+  width: 600px;
+}
+
+
+#formlm table {
+  padding: 10px;
+  background:  #9bc3df;  
+  font-size: 15px;
+  max-height: 300px;
+
+  border: 1px none;
+  border-collapse: collapse;
+  border-radius: 10px;
+}
+
+#formlm td {
+  padding: 10px;
+  background-color: #B3CDE0;
+  font-size: 13px;
+
+  border: 1px none;
+  border-collapse: collapse;
+  border-radius: 10px;
+}
+
+#dboardMain {
+  margin: 0px;
+  padding-top: 50px;
+  padding-bottom: 15px;
+  padding: 0px;
+  height: 850px;
+  width: 750px;
+
+  /* background-color: #52c234; */
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+
+  border-style: none;
+  border-width: 1px;
+}
+
+#dboardMainTop {
+  margin: 0px;
+  padding: 0px;
+
+  height: 60px;
+  width: 750px;
+
+  border-style: none;
+  border-width: 1px;
+}
+
+#dboardMainBottom {
+  margin: 0px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 0px;
+
+  background: #9bc3df;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.384), 0 6px 20px 0 rgba(0, 0, 0, 0.384);
+
+  height: 770px;
+  width: 800px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+
+  border-style: none;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  border-width: 0.5px;
+}
+
+#dboardMainBottomHeader {
+  margin: 0px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 0px;
+
+  height: 130px;
+  width: 700px;
+
+  border-style: none;
+  border-width: 1px;
+}
+
+#dboardMainBottomBody {
+  margin: 0px;
+  padding: 0px;
+
+  height: 600px;
+  width: 600px;
+
+  border-style: none;
+  border-width: 1px;
+}
+
+#footer {
+  padding: 5px;
+  height: 15vh;
+ 
+  box-shadow: 0px -4px 8px 0px rgba(237, 231, 231, 0.384);
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+
+  border-style: none;
+  border-color: black;
+  border-width: 1px;
+}
+
+#footerSub1 {
+  margin: 5px;
+  background-color: rgba(255, 255, 255, 0);
+
+  width: 50%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+
+  border-style: none;
+  border-color: black;
+  border-radius: 3px;
+  border-width: 1px;
+}
+
+#footerSub1Sub1 {
+  margin: 5px;
+
+  background-color: rgba(255, 255, 255, 0);
+  height: 65px;
+  width: 50%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+
+  border-style: none;
+  border-color: black;
+  border-radius: 3px;
+  border-width: 1px;
+}
+
 .hero
 {
 background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/bg2.jpg");
@@ -47,7 +491,6 @@ font-size: 40px;
   text-align: center;
 
 }
-
 h2
 {
   font-size: 70px;
