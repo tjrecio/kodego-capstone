@@ -26,44 +26,14 @@ require_once 'config.php';
 
     <?php // include 'header.php'
 
-    if (isset($_GET["medicine"])) {
-      // echo $_GET['storeID'];
-      // echo $_GET['medicine'];
+    $storeID = mysqli_real_escape_string($link, $_GET['storeID']);
+    $medicine = mysqli_real_escape_string($link, $_GET['medicine']);
 
-      $storeID = mysqli_real_escape_string($link, $_GET['storeID']);
-      $medicine = mysqli_real_escape_string($link, $_GET['medicine']);
-
-      $query7 = "
-      SELECT
-      inventory090822.*
-  FROM
-      `inventory090822`
-  WHERE
-      inventory090822.storeid = '$storeID' AND
-  (`$medicine` = '0' OR `$medicine` = '1')";
-
-      $query_run7 = mysqli_query($link, $query7);
-
-      if(mysqli_num_rows($query_run7) > 0){
-
-        $row7 = mysqli_fetch_array($query_run7, );
-
-      } else{
-        $errormessage = "No record found.";
-      }
-
-
-
-
-      // var_dump($row7);
-
-
-    }
     ?>
 
     <div id="main">
 
-      <form id="formMainEdit" method="POST" action="*.php">
+      <form id="formMainEdit" method="POST" action="mededit090622.php">
         <div>
           <p style="font-size: 30px; margin:0px;"><b>Edit Medicine Availability</b></p>
           <p style="font-size: 12px; margin:0px; margin-bottom: 20px;">Fill in the fields below to update your drug availability</p>
@@ -76,8 +46,8 @@ require_once 'config.php';
         <div id="stockCheck">
           <div style="font-size: 80%;"><i class="fa-solid fa-clipboard-question"></i>&nbspAvailable in Store?</div>
           <div style="font-size: 70%; display: flex; justify-content: space-evenly;">
-            <div style="width: 35%;"><input id="stock" type="checkbox" name="<?php $_GET['medicine']?>" value="1">&nbspAvailable</div>
-            <div style="width: 35%;"><input id="nostock" type="checkbox" name="<?php $_GET['medicine']?>" value="0">&nbspOut of Stock</div>
+            <div style="width: 35%;"><input id="stock" type="checkbox" name="<?php $_GET['medicine'] ?>" value="1">&nbspAvailable</div>
+            <div style="width: 35%;"><input id="nostock" type="checkbox" name="<?php $_GET['medicine'] ?>" value="0">&nbspOut of Stock</div>
           </div>
         </div>
         <div id="errorSpace">
