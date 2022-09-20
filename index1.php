@@ -55,7 +55,7 @@
     </nav>
     <!--NavBar Ends Here-->
     <!--Hero Page-->
-    
+
     <section class="hero sp-2" id="about">
         <div class="hero-area">
         <div class="container p-5">
@@ -63,7 +63,7 @@
 
                 <div class="content">
                     <h2>Welcome To Meditrack</h2>
-                    <h3 class="lead">A more convinient way of finding your medecine</h3>
+                    <h3 class="lead">A more convenient way of finding your medecine</h3>
                     <?php include 'header.php' ?>
                 </div>
             </div>
@@ -80,8 +80,8 @@
       ></span>
       <p class="service-features-title fs-4">Search Your Medicine</p>
       <p>
-        Search for the medicine you are looking for. 
-        Type the brand and look in the map where is it available.
+        Search for the medicine you are looking for.
+        Type the name and locate in the map where it is available.
       </p>
     </div>
     <div>
@@ -90,7 +90,7 @@
       ></span>
       <p class="service-features-title fs-4">Look For Drugstore</p>
       <p>
-        Look and search for the nearest and available Drugstore in your area.
+        Easily search for the nearest and available drugstores in your area.
       </p>
     </div>
     <div>
@@ -99,16 +99,16 @@
       ></span>
       <p class="service-features-title fs-4">Check For Availability</p>
       <p>
-        Look if the medicine you are looking for is availble and has stock in the Drugstore.
+        Readily displays the medicines your need - right now.
       </p>
     </div>
     <div>
         <span class="service-features-icon"
           ><i class="fa-sharp fa-solid fa-handshake"></i
         ></span>
-        <p class="service-features-title fs-4">Become A Partner</p>
+        <p class="service-features-title fs-4">Be A Partner</p>
         <p>
-          Become a partner with us, regiser and become one of the more accecible Drugstore in your area.
+          Partner with us. Register and be one of the more accessible pharmacies in your area.
         </p>
       </div>
   </div>
