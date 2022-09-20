@@ -383,12 +383,14 @@ body {
 #dboardMainBottomBody {
   margin: 0px;
   padding: 0px;
+  background-color: white;
 
-  height: 600px;
+  height: 575px;
   width: 600px;
 
   border-style: none;
   border-width: 1px;
+  border-radius: 10px;
 }
 
 #footer {
