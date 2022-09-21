@@ -42,7 +42,7 @@ session_start();
 
                 <div class="content">
                     <h2>Welcome To Meditrack</h2>
-                    <h3 class="lead">A more convenient way of finding your medecine</h3>
+                    <h3 class="lead">A more convenient way of finding your medicine</h3>
                     <?php include 'button.php' ?>
                 </div>
             </div>

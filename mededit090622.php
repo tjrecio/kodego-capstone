@@ -56,16 +56,8 @@ require_once 'config.php';
         $row7 = mysqli_fetch_array($query_run7);
         $row7b = mysqli_fetch_all($query_run7b);
 
-        // echo $row7[0][0];
-        // echo $row7[0][1];
-        // var_dump($row7b);
-        // echo $medicine;
-        // echo $row7[1];
-
     ?>
         <!--  -->
-
-
         <div id="main">
           <form id="formMainEdit" method="POST" action="updatequeries.php">
             <!-- hidden -->
@@ -85,24 +77,19 @@ require_once 'config.php';
             <div id="stockCheck">
               <div style="font-size: 80%;"><i class="fa-solid fa-clipboard-question"></i>&nbspAvailable in Store?</div>
               <div style="font-size: 70%; display: flex; justify-content: space-evenly;">
-                <!-- <div style="width: 35%;"><input id="stock" type="radio" name="<?= $row7[1];?>" value="1">&nbspAvailable</div>
-                <div style="width: 35%;"><input id="nostock" type="radio" name="<?= $row7[1];?>" value="0">&nbspOut of Stock</div> -->
                 <div style="width: 35%;"><input id="stock" type="radio" name="avlpost" value="1" checked>&nbspAvailable</div>
                 <div style="width: 35%;"><input id="nostock" type="radio" name="avlpost" value="0">&nbspOut of Stock</div>
               </div>
             </div>
             <div id="errorSpace">
-
               <?php
               if (isset($errormessage)) {
                 echo '<i class="fa-solid fa-circle-exclamation"></i>' . "&nbsp" . $errormessage;
               }
               ?>
-
             </div>
             <button id="submitBtn" style="width: 100%;" type="submit" name="mededit"><i class="fa-solid fa-floppy-disk"></i>&nbspSave Changes</button>
           </form>
-
         </div>
         <!--  -->
     <?php
