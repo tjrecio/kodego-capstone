@@ -114,7 +114,7 @@ $row5['2'] = "";
                     // var_dump($row6);
                   ?>
                     <tr>
-                      <td style="padding-left: 5px; width: 420px; border-style: none; border-radius: 0px;"><?php echo htmlspecialchars($row6['medicine']); ?></td>
+                      <td style="padding-left: 5px; width: 460px; border-style: none; border-radius: 0px;"><?php echo htmlspecialchars($row6['medicine']); ?></td>
                       <td style="width: 90px; font-size: 13px; border-style: none; border-radius: 0px; text-align: center">
                         <?php
                         if(htmlspecialchars($row6['avl']) == 1){
@@ -125,8 +125,8 @@ $row5['2'] = "";
 
                         ?>
                       </td>
-                      <td style="width: 90px; font-size: 13px; border-style: none; border-radius: 0px; text-align: center">
-                        <a href="mededit090622.php?storeID=<?= $row6['storeid']?>&medicine=<?= $row6['medicine']?>"><i class="fa-solid fa-pen"></i></a>
+                      <td style="width: 50px; font-size: 13px; border-style: none; border-radius: 0px; text-align: center">
+                        <a href="mededit090622.php?storeID=<?= $row6['storeid']?>&medicine=<?= $row6['medicine']?>"><i class="fa-solid fa-pen-to-square"></i></a>
                       </td>
                     </tr>
                   <?php

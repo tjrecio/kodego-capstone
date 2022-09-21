@@ -87,7 +87,7 @@ require_once 'config.php';
               <div style="font-size: 70%; display: flex; justify-content: space-evenly;">
                 <!-- <div style="width: 35%;"><input id="stock" type="radio" name="<?= $row7[1];?>" value="1">&nbspAvailable</div>
                 <div style="width: 35%;"><input id="nostock" type="radio" name="<?= $row7[1];?>" value="0">&nbspOut of Stock</div> -->
-                <div style="width: 35%;"><input id="stock" type="radio" name="avlpost" value="1">&nbspAvailable</div>
+                <div style="width: 35%;"><input id="stock" type="radio" name="avlpost" value="1" checked>&nbspAvailable</div>
                 <div style="width: 35%;"><input id="nostock" type="radio" name="avlpost" value="0">&nbspOut of Stock</div>
               </div>
             </div>
