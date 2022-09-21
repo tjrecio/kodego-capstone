@@ -33,7 +33,6 @@ session_start();
 </head>
 
 <body>
-              <?php include 'herobutton.php' ?>
     <!--Hero Page-->
 
     <section class="hero sp-2" id="about">
@@ -44,7 +43,7 @@ session_start();
                 <div class="content">
                     <h2>Welcome To Meditrack</h2>
                     <h3 class="lead">A more convenient way of finding your medecine</h3>
-                    <?php include 'header.php' ?>
+                    <?php include 'button.php' ?>
                 </div>
             </div>
         </div>
@@ -104,7 +103,7 @@ session_start();
         </p>
       </div>
       <div class="about-us-image">
-        <img src="images/bg2.jpg" alt="" />
+        <img src="images/pin.png" alt="" />
       </div>
     </div>
   </div>
