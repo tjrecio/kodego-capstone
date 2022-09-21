@@ -52,54 +52,82 @@ session_start();
 <!--End of Hero Page-->
 <!--Start of Features-->
 
-<div class="service-features">
-    <div>
-      <span class="service-features-icon">
+<!--Srart of Cards-->
+<div class="container">
+<div class="row">
+<div class="col-md-3 p-2">
+                                    <div class="card bg-light text-dark">
+                                    <div class="card-body  text-center">
+                                    <h4 class="card-title mb-3">Search Your Medicine</h4>
+                                    <span class="service-features-icon">
         <i class="fa-sharp fa-solid fa-magnifying-glass-location"></i
       ></span>
-      <p class="service-features-title fs-4">Search Your Medicine</p>
-      <p>
-        Search for the medicine you are looking for.
+                                 
+                                      <p class="card-text">
+                                      Search for the medicine you are looking for.
         Type the name and locate in the map where it is available.
-      </p>
-    </div>
-    <div>
-      <span class="service-features-icon"
-        ><i class="fa-sharp fa-solid fa-store"></i
+                                        
+                                
+                                </div>
+                                </div>
+                                </div>
+                                <div class="col-md-3 p-2">
+                                    <div class="card bg-light text-dark">
+                                    <div class="card-body  text-center">
+                                    <h4 class="card-title mb-3"> Look For Drugstore </h4>
+                                    <span class="service-features-icon">
+        <i class="fa-sharp fa-solid fa-magnifying-glass-location"></i
       ></span>
-      <p class="service-features-title fs-4">Look For Drugstore</p>
-      <p>
-        Easily search for the nearest and available drugstores in your area.
-      </p>
-    </div>
-    <div>
-      <span class="service-features-icon"
-        ><i class="fa-solid fa-pills"></i
+                                      <p class="card-text">
+                                      Easily search for the nearest and available drugstores in your area.
+                                </div>
+                                </div>
+                                </div>
+                                <div class="col-md-3 p-2">
+                                    <div class="card bg-light text-dark">
+                                    <div class="card-body  text-center">
+                                    <h4 class="card-title mb-3"> Check For Availability</h4>
+                                    <span class="service-features-icon">
+        <i class="fa-sharp fa-solid fa-magnifying-glass-location"></i
       ></span>
-      <p class="service-features-title fs-4">Check For Availability</p>
-      <p>
-        Readily displays the medicines your need - right now.
-      </p>
-    </div>
-    <div>
-        <span class="service-features-icon"
-          ><i class="fa-sharp fa-solid fa-handshake"></i
-        ></span>
-        <p class="service-features-title fs-4">Be A Partner</p>
-        <p>
-          Partner with us. Register and be one of the more accessible pharmacies in your area.
-        </p>
-      </div>
-  </div>
-  <!--Ends of Features-->
+                                 
+                                      <p class="card-text">
+                                      Readily displays if the medecine you are looking for is available.
+                                        
+                                
+                                </div>
+                                </div>
+                                </div>
+                                <div class="col-md-3 p-2">
+                                    <div class="card bg-light text-dark">
+                                    <div class="card-body  text-center">
+                                    <h4 class="card-title mb-3">Be A Partner </h4>
+                                    <span class="service-features-icon">
+        <i class="fa-sharp fa-solid fa-magnifying-glass-location"></i
+      ></span>
+                                 
+                                      <p class="card-text">
+                                      Partner with us. Register and be one of the more accessible pharmacies in your area.
+                                        
+                                
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+
+  <!--Ends of Cards-->
   <!--About US-->
   <div class="about-us-container">
     <div class="about-us-wrapper">
       <div class="about-us-text">
+        <h4 class="title"><b> Free. Online. Realtime. </b></h4>
         <p class="lead">
-          Meditrack is a Web-Application built this year 2022 aiming to help the residents of quezon city to a more accessible and more convinient way of looking for medicine.
-          Meditrack is founded by three young men who experience the hectic in going in long lines in the drugstore but ended up buying nothing. This three young men brainstorm and
-          eneded up making the Web-Application.
+          Meditrack is a Web-Application built this year 2022 aiming to help the residents
+          of Quezon City to a more accessible and more convinient way of looking for medicine.
+          Meditrack is founded by three young men who experience the hectic on going in long 
+          lines in the drugstore but ended up buying nothing. This three young men brainstormed 
+          and eneded up making the web-application.
         </p>
       </div>
       <div class="about-us-image">

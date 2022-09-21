@@ -6,7 +6,7 @@ html
 body 
 {
   margin: 0px;
-  background: #6497B1;  
+  background: #89cced;  
   font-size: 20px;
 
   font-family: 'Poppins', sans-serif;
@@ -118,6 +118,7 @@ body
   color: black;
   border-color: black;
   border-width: 1px;
+  margin-bottom: 10px;
 }
 
 #main 
@@ -496,6 +497,13 @@ h2
 h3 {
   font-size: 100px;
 }
+h4 {
+  font-size: 25px;
+  font-weight: 100;
+}
+.title {
+  font-size: 50px;
+}
 .btn 
 {
   margin-top: 100px;
@@ -522,7 +530,6 @@ a {
     margin: 0 10rem;
     text-align: center;
   }
-  
   .service-features-icon i {
     color: #000137;
     font-size: 4rem;
@@ -553,4 +560,14 @@ a {
     height: 50vh;
     object-fit: cover;
     border-radius: 10px;
+  }
+  .card {
+    border-radius: 20px;
+    height: 300px;
+    margin: 10px;
+    border: #000137;
+    background-color: red;
+  }
+  .row {
+    padding-top: 50px;
   }
