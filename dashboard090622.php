@@ -85,12 +85,6 @@ $row5['2'] = "";
             <div id="dboardMainBottomBodyTableOps" style="display: flex; justify-content: space-evenly; align-self: center;">
 
               <div style="margin-bottom: 15px; width: 100%; display: flex; justify-content: space-evenly; align-self: center;">
-                <div style="width: 70%;">
-                spare
-                </div>
-                <div style="width: 30%; display: flex; flex-wrap: wrap; justify-content: flex-end;">
-                  <button id="buttonstyleheaderRight"><i class="fa-solid fa-floppy-disk"></i>&nbspSave Changes</button>
-                </div>
               </div>
 
             </div>
@@ -120,13 +114,13 @@ $row5['2'] = "";
                     // var_dump($row6);
                   ?>
                     <tr>
-                      <td style="width: 420px; border-style: none; border-radius: 0px;"><?php echo htmlspecialchars($row6['medicine']); ?></td>
+                      <td style="padding-left: 5px; width: 420px; border-style: none; border-radius: 0px;"><?php echo htmlspecialchars($row6['medicine']); ?></td>
                       <td style="width: 90px; font-size: 13px; border-style: none; border-radius: 0px; text-align: center">
                         <?php
                         if(htmlspecialchars($row6['avl']) == 1){
-                          echo "available";
+                          echo "<p style='color: green;'>available</p>";
                         } else{
-                          echo "not available";
+                          echo "<p style='color: red;'>not available</p>";
                         };
 
                         ?>
@@ -144,6 +138,13 @@ $row5['2'] = "";
 
                 </table>
               </div>
+              <div id="errorSpace">
+              <?php
+              if (isset($errormessage)) {
+                echo '<i class="fa-solid fa-circle-exclamation"></i>' . "&nbsp" . $errormessage;
+              }
+              ?>
+            </div>
             </div>
           </div>
         </div>
