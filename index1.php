@@ -115,14 +115,11 @@ session_start();
                                 </section>
   <!--Ends of Cards-->
   <!--Start of Register Area-->
-
 <div class="registration">
   <h2 style="font-size: 50px;"> Be A Partner!</h2>
   <p>Click This Button To Register!</p>
 <?php include 'registerbutton.php' ?>
-
 </div>
-
   <!--About US-->
   <section style="background-color:#226a99;">
     <div class="about-us-wrapper pb-5">

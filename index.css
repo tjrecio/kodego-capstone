@@ -548,6 +548,7 @@ a {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     margin: 10rem;
+    color: white;
   }
 
   .about-us-text h4 {
@@ -568,11 +569,12 @@ a {
   }
   .card {
     border-radius: 20px;
-    height: 315px;
+    height: 330px;
     margin: 10px;
     border: #000137;
     background: #5dacd3;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.384), 0 6px 20px 0 rgba(0, 0, 0, 0.384);
+    
   }
   .row {
     padding-top: 50px;
