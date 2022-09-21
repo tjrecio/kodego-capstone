@@ -1,12 +1,13 @@
 html 
 {
   scroll-behavior: smooth;
+  height: 100%;  
 }
 
 body 
 {
   margin: 0px;
-  background: #89cced;  
+  background: #6497B1;  
   font-size: 20px;
 
   font-family: 'Poppins', sans-serif;
@@ -545,14 +546,18 @@ a {
   .about-us-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    gap: 2rem;
     margin: 10rem;
   }
 
-  .about-us-text p {
+  .about-us-text h4 {
     margin: 2rem 0;
-    text-align: center;
-    padding-top: 100px;
+    padding-top: 5px;
+    font-weight: 700;
+  }
+  p {
+    margin: 2rem 0;
+    padding-top: 5px;
   }
   
   .about-us-image img {
@@ -563,11 +568,39 @@ a {
   }
   .card {
     border-radius: 20px;
-    height: 300px;
+    height: 315px;
     margin: 10px;
     border: #000137;
-    background-color: red;
+    background: #5dacd3;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.384), 0 6px 20px 0 rgba(0, 0, 0, 0.384);
   }
   .row {
     padding-top: 50px;
+    padding-bottom: 50px;
   }
+  #buttonstyleregbutton {
+    padding: 10px;
+    background-color: #000137 ;
+    width: 20%;
+  
+  
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    border-radius: 10px;
+    border-style: none;
+    color: white;
+    border-width: 1px;
+    margin-bottom: 10px;
+  }
+  .registration {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    padding-top: 50px;
+  }
+  section {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.384), 0 6px 20px 0 rgba(0, 0, 0, 0.384);
+    }

@@ -34,7 +34,6 @@ session_start();
 
 <body>
     <!--Hero Page-->
-
     <section class="hero sp-2" id="about">
         <div class="hero-area">
         <div class="container p-5">
@@ -53,10 +52,11 @@ session_start();
 <!--Start of Features-->
 
 <!--Srart of Cards-->
-<div class="container">
-<div class="row">
+<section style="background-color:#226a99;">
+<div class="container" >
+<div class="row" >
 <div class="col-md-3 p-2">
-                                    <div class="card bg-light text-dark">
+                                    <div class="card text-dark">
                                     <div class="card-body  text-center">
                                     <h4 class="card-title mb-3">Search Your Medicine</h4>
                                     <span class="service-features-icon">
@@ -72,24 +72,22 @@ session_start();
                                 </div>
                                 </div>
                                 <div class="col-md-3 p-2">
-                                    <div class="card bg-light text-dark">
+                                    <div class="card  text-dark">
                                     <div class="card-body  text-center">
                                     <h4 class="card-title mb-3"> Look For Drugstore </h4>
                                     <span class="service-features-icon">
-        <i class="fa-sharp fa-solid fa-magnifying-glass-location"></i
-      ></span>
+                                    <i class="fa-solid fa-store"></i></span>
                                       <p class="card-text">
                                       Easily search for the nearest and available drugstores in your area.
                                 </div>
                                 </div>
                                 </div>
                                 <div class="col-md-3 p-2">
-                                    <div class="card bg-light text-dark">
+                                    <div class="card  text-dark">
                                     <div class="card-body  text-center">
                                     <h4 class="card-title mb-3"> Check For Availability</h4>
                                     <span class="service-features-icon">
-        <i class="fa-sharp fa-solid fa-magnifying-glass-location"></i
-      ></span>
+                                    <i class="fa-solid fa-pills"></i></span>
                                  
                                       <p class="card-text">
                                       Readily displays if the medecine you are looking for is available.
@@ -99,12 +97,11 @@ session_start();
                                 </div>
                                 </div>
                                 <div class="col-md-3 p-2">
-                                    <div class="card bg-light text-dark">
+                                    <div class="card text-dark">
                                     <div class="card-body  text-center">
                                     <h4 class="card-title mb-3">Be A Partner </h4>
                                     <span class="service-features-icon">
-        <i class="fa-sharp fa-solid fa-magnifying-glass-location"></i
-      ></span>
+                                    <i class="fa-solid fa-handshake"></i></span>
                                  
                                       <p class="card-text">
                                       Partner with us. Register and be one of the more accessible pharmacies in your area.
@@ -115,14 +112,23 @@ session_start();
                                 </div>
                                 </div>
                                 </div>
-
+                                </section>
   <!--Ends of Cards-->
+  <!--Start of Register Area-->
+
+<div class="registration">
+  <h2 style="font-size: 50px;"> Be A Partner!</h2>
+  <p>Click This Button To Register!</p>
+<?php include 'registerbutton.php' ?>
+
+</div>
+
   <!--About US-->
-  <div class="about-us-container">
-    <div class="about-us-wrapper">
+  <section style="background-color:#226a99;">
+    <div class="about-us-wrapper pb-5">
       <div class="about-us-text">
-        <h4 class="title"><b> Free. Online. Realtime. </b></h4>
-        <p class="lead">
+      <h4 class="title pt-4"> Free. Online. Realtime. </h4>
+        <p>
           Meditrack is a Web-Application built this year 2022 aiming to help the residents
           of Quezon City to a more accessible and more convinient way of looking for medicine.
           Meditrack is founded by three young men who experience the hectic on going in long 
@@ -130,11 +136,11 @@ session_start();
           and eneded up making the web-application.
         </p>
       </div>
-      <div class="about-us-image">
+      <div class="about-us-image pt-4">
         <img src="images/pin.png" alt="" />
       </div>
     </div>
-  </div>
+  </section>
   <!--End of About Us-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
