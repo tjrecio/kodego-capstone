@@ -25,7 +25,7 @@ $row5['2'] = "";
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/6e0e3f1ae2.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style090622.css">
-  <script src="script090422.js"></script>
+  <script src="index.js"></script>
   <title>Dashboard - 090622</title>
 </head>
 
@@ -114,19 +114,19 @@ $row5['2'] = "";
                     // var_dump($row6);
                   ?>
                     <tr>
-                      <td style="padding-left: 5px; width: 420px; border-style: none; border-radius: 0px;"><?php echo htmlspecialchars($row6['medicine']); ?></td>
+                      <td style="padding-left: 5px; width: 460px; border-style: none; border-radius: 0px;"><?php echo htmlspecialchars($row6['medicine']); ?></td>
                       <td style="width: 90px; font-size: 13px; border-style: none; border-radius: 0px; text-align: center">
                         <?php
-                        if(htmlspecialchars($row6['avl']) == 1){
+                        if (htmlspecialchars($row6['avl']) == 1) {
                           echo "<p style='color: green;'>available</p>";
-                        } else{
+                        } else {
                           echo "<p style='color: red;'>not available</p>";
                         };
 
                         ?>
                       </td>
-                      <td style="width: 90px; font-size: 13px; border-style: none; border-radius: 0px; text-align: center">
-                        <a href="mededit090622.php?storeID=<?= $row6['storeid']?>&medicine=<?= $row6['medicine']?>"><i class="fa-solid fa-pen"></i></a>
+                      <td style="width: 50px; font-size: 13px; border-style: none; border-radius: 0px; text-align: center">
+                        <a href="mededit090622.php?storeID=<?= $row6['storeid'] ?>&medicine=<?= $row6['medicine'] ?>"><i class="fa-solid fa-pen-to-square"></i></a>
                       </td>
                     </tr>
                   <?php
@@ -139,20 +139,20 @@ $row5['2'] = "";
                 </table>
               </div>
               <div id="errorSpace">
-              <?php
-              if (isset($errormessage)) {
-                echo '<i class="fa-solid fa-circle-exclamation"></i>' . "&nbsp" . $errormessage;
-              }
-              ?>
-            </div>
+                <?php
+                if (isset($errormessage)) {
+                  echo '<i class="fa-solid fa-circle-exclamation"></i>' . "&nbsp" . $errormessage;
+                }
+                ?>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-
   </div>
+
 </body>
 
 </html>

@@ -73,7 +73,7 @@ $row2[] = "";
                 <div><input class="inputBoxDrug" type="text" name="drug" placeholder="type-in medicine by generic name..."></div>
               </div>
               <!-- search button -->
-              <button id="drugSearchBtn" type="submit" name="beginsearch"><i class="fa-solid fa-magnifying-glass"></i></button>
+              <button id="drugSearchBtn" type="submit" style="font-size: 25px" name="beginsearch"><i class="fa-sharp fa-solid fa-magnifying-glass-location"></i></button>
             </div>
             <div id="errorSpace">
               <?php
@@ -95,25 +95,26 @@ $row2[] = "";
         </div>
 
         <div id="formlm" style="height: 330px;">
-          <div style="background-color:white; display: flex; flex-wrap: nowrap;">
-            <div style="width: 35%; display: flex; flex-wrap: nowrap; justify-content: center">
-              Store
+          <div style="background-color: white; border-top-left-radius: 10px; border-top-right-radius: 10px;" >
+            <div style="display: flex; flex-wrap: nowrap;">
+              <div style="width: 35%; display: flex; flex-wrap: nowrap; justify-content: center">
+                Store
+              </div>
+              <div style="width: 65%; display: flex; flex-wrap: nowrap; justify-content: center">
+                Address
+              </div>
             </div>
-            <div style="width: 65%; display: flex; flex-wrap: nowrap; justify-content: center">
-              Address
-            </div>
-          </div>
-          <div id="tableresult" style="height: 300px; overflow-y: auto; border-style: none; border-radius: 0px;">
-            <table>
+            <div id="tableresult" style="height: 300px; background-color: rgba(255, 255, 255, 0); overflow-y: auto; border-style: none; border-radius: 0px;">
+              <table>
 
-              <!-- query 2 -->
-              <?php
-              if (isset($_POST['beginsearch'])) {
+                <!-- query 2 -->
+                <?php
+                if (isset($_POST['beginsearch'])) {
 
-                if (!empty($_POST['drug'])) {
-                  $drug = $_POST['drug'];
+                  if (!empty($_POST['drug'])) {
+                    $drug = $_POST['drug'];
 
-                  $query2 = "
+                    $query2 = "
                 SELECT
                     inventory090822.store,
                     storeinfo090822.address
@@ -123,23 +124,24 @@ $row2[] = "";
                 ON inventory090822.storeID = storeinfo090822.storeID
                 WHERE `$drug` = 1";
 
-                  $query_run2 = mysqli_query($link, $query2);
+                    $query_run2 = mysqli_query($link, $query2);
 
-                  while ($row2 = mysqli_fetch_array($query_run2, MYSQLI_ASSOC)) {
+                    while ($row2 = mysqli_fetch_array($query_run2, MYSQLI_ASSOC)) {
 
-              ?>
-                    <tr>
-                      <td style="border-style: none; border-radius: 0px;"><?php echo htmlspecialchars($row2['store']); ?></td>
-                      <td style="border-style: none; border-radius: 0px;"><?php echo htmlspecialchars($row2['address']); ?></td>
-                    </tr>
-              <?php
+                ?>
+                      <tr>
+                        <td style="border-style: none; border-radius: 0px;"><?php echo htmlspecialchars($row2['store']); ?></td>
+                        <td style="border-style: none; border-radius: 0px;"><?php echo htmlspecialchars($row2['address']); ?></td>
+                      </tr>
+                <?php
+                    };
                   };
-                };
-              }
-              ?>
-              <!-- query 2 -->
+                }
+                ?>
+                <!-- query 2 -->
 
-            </table>
+              </table>
+            </div>
           </div>
         </div>
       </div>
