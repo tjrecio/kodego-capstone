@@ -84,7 +84,7 @@ session_start();
                 <i class="fa-solid fa-handshake"></i></span>
 
               <p class="card-text">
-                Register and be one of the more accessible pharmacies in your area. Benefit from increased visitor satisfaction and conversion rates - all for free.
+                Register and be one of the more accessible pharmacies in your area.
             </div>
           </div>
         </div>
@@ -95,7 +95,7 @@ session_start();
   <!--Start of Register Area-->
   <div class="registration">
     <h2 style="font-size: 50px;"> Be A Partner!</h2>
-    <p>Click This Button To Register!</p>
+    <p>Customers leaving your store empty-handed? Ever wished you had the option to tell them what you have instead? Benefit from increased customer satisfaction and conversion rates - all for free.</p>
     <?php include 'registerbutton.php' ?>
   </div>
   <!--About US-->
