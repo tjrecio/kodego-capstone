@@ -21,7 +21,7 @@ $row2[] = "";
   <script src="https://kit.fontawesome.com/6e0e3f1ae2.js" crossorigin="anonymous"></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
   <link rel="stylesheet" href="style090622.css">
-  <script src="index.js"></script>
+
   <title>TEST multi - 090622</title>
 </head>
 
@@ -64,13 +64,18 @@ $row2[] = "";
         </div>
 
         <div id="formlm">
-
-          <form id="" method="POST" action="awstorewmap.php">
-
-            <div id="drugSearch">
-              <div>
+          <form id="wrapper" method="POST" action="awstorewmap.php">
+            <div class="drugSearch">
+              <!-- search box -->
+              <div class="search-input">
                 <div style="font-size: 80%;"><i class="fa-solid fa-prescription-bottle-medical"></i>&nbspSearch your Medicine</div>
-                <div><input class="inputBoxDrug" type="text" name="drug" placeholder="type-in medicine by generic name..."></div>
+                <a href="" target="_blank" hidden></a>
+                <div style="height: 100px;">
+                  <input class="inputBoxDrug" type="text" name="drug" placeholder="type-in medicine by generic name...">
+                  <div class="autocom-box">
+                    <!-- here list are inserted from javascript -->
+                  </div>
+                </div>
               </div>
               <!-- search button -->
               <button id="drugSearchBtn" type="submit" style="font-size: 25px" name="beginsearch"><i class="fa-sharp fa-solid fa-magnifying-glass-location"></i></button>
@@ -84,9 +89,9 @@ $row2[] = "";
             </div>
           </form>
 
-          <div id="drugOutput">
+          <div id="drugOutput" style="padding-bottom: 10px;">
             <div style="font-size: 80%;"><i class="fa-solid fa-prescription-bottle-medical"></i>&nbspMedicine</div>
-            <div><input class="inputBoxLm" type="text" name="drug1" style="padding-left: 5px;" value="<?php echo htmlspecialchars($row['0']); ?>"></div>
+            <div><input class="inputBoxLm" type="text" name="drug1" style="padding-left: 5px; width: 330px;" value="<?php echo htmlspecialchars($row['0']); ?>"></div>
           </div>
           <div id="priceOutput">
             <div style="font-size: 80%;"><i class="fa-solid fa-peso-sign"></i>&nbspPrice Range</div>
@@ -95,8 +100,8 @@ $row2[] = "";
         </div>
 
         <div id="formlm" style="height: 330px;">
-          <div style="background-color: white; border-top-left-radius: 10px; border-top-right-radius: 10px;" >
-            <div style="display: flex; flex-wrap: nowrap;">
+          <div style="">
+            <div style="background-color: white; border-top-left-radius: 10px; border-top-right-radius: 10px; display: flex; flex-wrap: nowrap;">
               <div style="width: 35%; display: flex; flex-wrap: nowrap; justify-content: center">
                 Store
               </div>
@@ -104,7 +109,7 @@ $row2[] = "";
                 Address
               </div>
             </div>
-            <div id="tableresult" style="height: 300px; background-color: rgba(255, 255, 255, 0); overflow-y: auto; border-style: none; border-radius: 0px;">
+            <div id="tableresult" style="height: 300px; overflow-y: auto; border-style: none; border-radius: 0px;">
               <table>
 
                 <!-- query 2 -->
@@ -267,6 +272,8 @@ $row2[] = "";
     </div>
   </div>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwhT23_kcZzV8UymJ0bIdLnnw0oVvCaFk&callback=initMap&v=weekly" defer></script>
+  <script src="suggestions.js"></script>
+  <script src="index.js"></script>
 </body>
 
 </html>
