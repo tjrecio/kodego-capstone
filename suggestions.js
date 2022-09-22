@@ -1,5 +1,4 @@
 let suggestions = [
-
   "Abacavir 300 mg tablet",
   "Acetazolamide 250 mg Tablet",
   "Acetylcysteine 100 mg Oral Powder Sachet",
@@ -514,6 +513,10 @@ let suggestions = [
   "Mebendazole 500 mg Tablet",
   "Mecobalamin 500 mcg Tablet",
   "Mecobalamin 500 mcg/mL, 1 mL Solution for Injection Ampule",
+  "Medicine 1",
+  "Medicine 2",
+  "Medicine 3",
+  "Medicine 4",
   "Medroxyprogesterone 10 mg Tablet",
   "Medroxyprogesterone 150 mg/mL, 1 mL Suspension for Injection Vial",
   "Mefenamic Acid 250 mg Capsule",
@@ -828,5 +831,4 @@ let suggestions = [
   "Zinc (equiv. to 20 mg elemental zinc/5 mL), 60 mL Syrup Bottle",
   "Zinc 70 mg/5 mL (equivalent to 10 mg elemental zinc), 60 mL Syrup Bottle",
   "Zolpidem 10 mg Tablet",
-
 ]
